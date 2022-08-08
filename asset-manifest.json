@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/resume/static/css/main.78b47b90.css",
+    "main.js": "/resume/static/js/main.28aec3a8.js",
+    "static/media/Henil.ico": "/resume/static/media/Henil.cf00f3589441d9cdb4df.ico",
+    "index.html": "/resume/index.html",
+    "main.78b47b90.css.map": "/resume/static/css/main.78b47b90.css.map",
+    "main.28aec3a8.js.map": "/resume/static/js/main.28aec3a8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.78b47b90.css",
+    "static/js/main.28aec3a8.js"
+  ]
+}
