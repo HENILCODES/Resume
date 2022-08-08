@@ -1,0 +1,214 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+
+:root {
+    --back-color: #000000;
+    --body-font: 'Courier New', Courier, monospace;
+    // --border-temp: 2px solid red;
+    --border-temp: none;
+    --font-white: white;
+}
+
+.borde-temp {
+    border: var(--border-temp);
+}
+
+.place-self {
+    place-self: center;
+}
+
+.place-items {
+    place-items: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    @extend .borde-temp;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--back-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #191717;
+}
+
+body {
+    color: var(--font-white);
+    transition: 0.5s;
+    background: var(--back-color);
+    background: -webkit-linear-gradient(to right, #191717, var(--back-color));
+    background: linear-gradient(to right, #191717, var(--back-color));
+    font-family: var(--body-font);
+    user-select: none;
+    scroll-behavior: smooth;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    .social {
+        i {
+            margin-right: 20px;
+        }
+    }
+}
+
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    transition: 0.4s;
+
+    .top {
+        height: 270px;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+        .title_name {
+            font-size: 2.6rem;
+        }
+
+        .span {
+            font-size: 1.3rem;
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+
+        .job_title {
+            margin-top: 8px;
+        }
+
+        img {
+            box-shadow: 0 0 10px 0 rgb(211, 208, 208);
+            border-radius: 50%;
+        }
+    }
+
+    .nav {
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            li {
+                list-style: none;
+                margin: 10px 29px;
+
+                a {
+                    font-weight: bold;
+                    font-size: 1.5rem;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    color: var(--font-white);
+                }
+            }
+        }
+    }
+
+    .box {
+        padding-top: 50px;
+    }
+}
+
+.hr {
+    background-color: aliceblue;
+    height: 1px;
+    width: 86%;
+    margin: auto;
+    margin-top: 15px;
+    animation: change 3s infinite;
+}
+@keyframes change{
+    0%{
+        background-color: rgb(225, 221, 2);
+    }
+    50%{
+        background-color: rgb(27, 250, 27);
+    }
+    70%{
+        background-color: rgb(1, 173, 173);
+    }
+    75%{
+        background-color: white;
+    }
+    100%{
+        background-color: rgb(225, 221, 2);
+    }
+}
+.about {
+    // margin: auto;
+    margin-top: 65px;
+    display: flex;
+    justify-content: space-evenly;
+
+    .title {
+        font-size: 1.2rem;
+        max-width: 500px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        .me {
+            margin-top: 25px;
+            margin-left: 20px;
+            letter-spacing: 1px;
+        }
+    }
+    .about_detail {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 20px;
+
+        .block {
+            margin-top: 25px;
+        }
+
+        .block:nth-child(odd) {
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.icons {
+    .icon_Container {
+        display: flex;
+        flex-wrap: wrap;
+
+        img {
+            width: 125px;
+            height: 110px;
+        }
+
+        .icon {
+            margin: 10px;
+        }
+    }
+}
+
+@media (min-width: 600px) {
+    .container {
+        max-width: 1200px;
+        margin-top: 35px;
+    }
+
+    img {
+        width: 150px;
+    }
+}
