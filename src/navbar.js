@@ -3,16 +3,16 @@ function Navbar() {
     <div className="nav">
       <nav>
         <li>
-          <a href="https://henilcode.rf.gd">about</a>
+          <a href="/">about</a>
         </li>
         <li>
-          <a href="https://henilcode.rf.gd">knowledge</a>
+          <a href="/">knowledge</a>
         </li>
         <li>
-          <a href="https://henilcode.rf.gd">Project</a>
+          <a href="/">Project</a>
         </li>
         <li>
-          <a href="https://henilcode.rf.gd">Contact</a>
+          <a href="/">Contact</a>
         </li>
       </nav>
       <hr className="hr" />

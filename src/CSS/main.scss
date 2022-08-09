@@ -4,10 +4,16 @@
     --back-color: #000000;
     --body-font: 'Courier New', Courier, monospace;
     // --border-temp: 2px solid red;
-    --border-temp: none;
+    // --border-temp: none;
     --font-white: white;
 }
-
+.hr {
+    background-color: aliceblue;
+    height: 1px;
+    margin: auto;
+    margin-top: 15px;
+    animation: change 3s infinite;
+}
 .borde-temp {
     border: var(--border-temp);
 }
@@ -127,14 +133,7 @@ body {
     }
 }
 
-.hr {
-    background-color: aliceblue;
-    height: 1px;
-    width: 86%;
-    margin: auto;
-    margin-top: 15px;
-    animation: change 3s infinite;
-}
+
 @keyframes change{
     0%{
         background-color: rgb(225, 221, 2);
@@ -152,8 +151,10 @@ body {
         background-color: rgb(225, 221, 2);
     }
 }
-.about {
+.box{
     margin-top: 65px;
+}
+.about {
     display: flex;
     justify-content: space-evenly;
 
@@ -174,9 +175,9 @@ body {
         margin-top: 20px;
 
         .block {
-            margin-top: 25px;
+            margin-bottom: 20px;
         }
-
+        
         .block:nth-child(odd) {
             font-weight: bold;
             font-size: 1.2rem;
