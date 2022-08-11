@@ -2,7 +2,7 @@ function About(props) {
   return (
     <div className="box">
       <h1>About Me</h1>
-      <div className="about" id="about">
+      <div className="about spaceTop" id="about">
         <div className="title">
           <div className="me">
             <p>
@@ -30,8 +30,36 @@ function About(props) {
 function Knowledge() {
   return (
     <div className="box">
-      <div className="knowledge">
-        <h1>f</h1>
+      <h1>Knowledge</h1>
+      <div className="knowledge spaceTop">
+        <div className="blocks">
+          <h4>Front-end Language</h4>
+          <div className="icon_box">
+            {Icon_Detail("fa fa-brands fa-html5", "html")}
+            {Icon_Detail("fa fa-brands fa-css3-alt", "CSS")}
+            {Icon_Detail("fa fa-brands fa-square-js", "js")}
+            {Icon_Detail("fa fa-brands fa-php", "php")}
+            {Icon_Detail("fa fa-brands fa-git-alt", "git")}
+            {Icon_Detail("fa fa-brands fa-github", "github")}
+            {Icon_Detail("fa fa-brands fa-react", "reactjs")}
+            {Icon_Detail("fa fa-brands fa-python", "python")}
+            {Icon_Detail("fa fa-brands fa-sass", "sass")}
+            {Icon_Detail("fa fa-brands fa-c", "C/C++")}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Icon_Detail(code, title) {
+  return (
+    <div className="icon_block">
+      <div className="icon">
+        <i className={code}></i>
+      </div>
+      <div className="icon_title">
+        <span>{title}</span>
       </div>
     </div>
   );

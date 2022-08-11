@@ -1,4 +1,5 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/brands.min.css");
 :root {
   --back-color: #000000;
   --body-font: "Courier New", Courier, monospace;
@@ -156,7 +157,11 @@ body {
   }
 }
 .box {
-  margin-top: 65px;
+  margin-top: 40px;
+}
+
+.spaceTop {
+  margin-top: 25px;
 }
 
 .about {
@@ -169,14 +174,11 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .about .title .me {
-  margin-top: 25px;
-  margin-left: 20px;
   letter-spacing: 1px;
 }
 .about .about_detail {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  margin-top: 20px;
 }
 .about .about_detail .block {
   margin-bottom: 20px;
@@ -185,6 +187,25 @@ body {
   font-weight: bold;
   font-size: 1.2rem;
   text-transform: uppercase;
+}
+
+.knowledge .icon_box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.knowledge .icon_block {
+  width: 80px;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 4px;
+  text-align: center;
+}
+.knowledge .icon_block .icon {
+  height: 50px;
+}
+.knowledge .icon_block .icon i {
+  font-size: 2.6rem;
 }
 
 .icons .icon_Container {
