@@ -4,7 +4,7 @@ function About(props) {
       <h1>About Me</h1>
       <div className="about spaceTop" id="about">
         <div className="title">
-          <div className="me">
+          <div spellcheck="true" contenteditable="true" className="me">
             <p>
               Hello! I'm Web Devloper.I am study in BCA. I am Know about Web
               Design. I am a skilled Front-end Developer and also Knowledge
@@ -45,6 +45,10 @@ function Knowledge() {
             {Icon_Detail("fa fa-brands fa-python", "python")}
             {Icon_Detail("fa fa-brands fa-sass", "sass")}
             {Icon_Detail("fa fa-brands fa-c", "C/C++")}
+            {Icon_Detail("fa fa-brands fa-bootstrap", "Bootstrap")}
+            {Icon_Detail("icon-mongodb", "Mongodb")}
+            {Icon_Detail("icon-jquery", "jquery")}
+            {Icon_Detail("bi bi-server", "DBMS")}
           </div>
         </div>
       </div>
