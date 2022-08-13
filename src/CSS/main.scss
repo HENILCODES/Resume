@@ -187,14 +187,20 @@ body {
     }
 }
 .knowledge{
+    .konwledge_blook{
+        width: 82%;
+        margin: auto;
+        margin-top: 30px;
+    }
     .icon_box{
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
+        margin: 20px 0;
     }
     
     .icon_block{
-        width: 100px;
+        width: 85px;
         text-transform: uppercase;
         // background-color:red;
         font-weight: bold;
@@ -204,7 +210,7 @@ body {
             height: 100%;
         }
         .icon{
-            height: 60px;
+            height: 50px;
             // margin: 4px;
             i{
                 font-size: 2.6rem;
@@ -237,11 +243,22 @@ body {
     color:aqua;
 }
 .fa-bootstrap{
-    color:rgb(61, 61, 225);
+    color:rgb(57, 106, 255);
+}
+.bi-server{
+    color: #ffbebe;
 }
 .fa-css3-alt{
-    // background-color: white;
-    color: rgb(67, 137, 249);
+    color: rgb(67, 200, 249);
+}
+.fa-java{
+    color: rgb(255, 120, 52);
+}
+.fa-c{
+    color: rgb(64, 188, 255);
+}
+.fa-python{
+    color: rgb(253, 143, 65);
 }
 // .icons {
 //     .icon_Container {

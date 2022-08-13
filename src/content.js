@@ -41,27 +41,17 @@ function Knowledge() {
               {Icon_Detail("fa fa-brands fa-square-js", "js")}
               {Icon_Detail("fa fa-brands fa-php", "php")}
               {Icon_Detail("fa fa-brands fa-git-alt", "git")}
-              {Icon_Detail("fa fa-brands fa-github", "github")}
-              {Icon_Detail("fa fa-brands fa-react", "reactjs")}
               {Icon_Detail("fa fa-brands fa-sass", "sass")}
-              {Icon_Detail("icon-mongodb", "Mongodb")}
               {Icon_Detail("icon-jquery", "jquery")}
+            </div>
+          </div>
+          <div className="konwledge_blook">
+            <h4>Basic Knowledge</h4>
+            <div className="icon_box">
+              {Icon_Detail("icon-mongodb", "Mongodb")}
+              {Icon_Detail("fa fa-brands fa-react", "reactjs")}
               {Icon_Detail("bi bi-server", "DBMS")}
-            </div>
-          </div>
-          <div className="konwledge_blook">
-            <h4>Frame Work</h4>
-            <div className="icon_box">
               {Icon_Detail("fa fa-brands fa-bootstrap", "Bootstrap")}
-            </div>
-          </div>
-          <div className="konwledge_blook">
-            <h4>Programming Language</h4>
-            <div className="icon_box">
-              {Image_Detail(
-                "https://cdn.cdnlogo.com/logos/v/82/visual-studio-code.svg",
-                "V S code"
-              )}
               {Image_Detail(
                 "https://miro.medium.com/max/800/1*BBYoIy6qy2jmBtOMJx7Ndw.png",
                 "ajax"
@@ -73,6 +63,16 @@ function Knowledge() {
               {Icon_Detail("fa fa-brands fa-python", "python")}
               {Icon_Detail("fa fa-brands fa-c", "C/C++")}
               {Icon_Detail("fa fa-brands fa-java", "java")}
+            </div>
+          </div>
+          <div className="konwledge_blook">
+            <h4>Software</h4>
+            <div className="icon_box">
+              {Image_Detail(
+                "https://cdn.cdnlogo.com/logos/v/82/visual-studio-code.svg",
+                "V S code"
+              )}
+              {Icon_Detail("fa fa-brands fa-github", "github")}
             </div>
           </div>
         </div>
