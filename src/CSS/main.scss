@@ -80,7 +80,6 @@ body {
         }
     }
 }
-
 .container {
     width: 100%;
     margin-left: auto;
@@ -314,8 +313,12 @@ h1{
 .fa-python{
     color: rgb(253, 143, 65);
 }
-
-
+.bi-geo-alt{
+    color: gold;
+    &:hover{
+        color: rgb(13, 227, 13);
+    }
+}
 @media (min-width: 600px) {
     .container {
         max-width: 1200px;

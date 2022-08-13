@@ -337,6 +337,13 @@ h1 {
   color: rgb(253, 143, 65);
 }
 
+.bi-geo-alt {
+  color: gold;
+}
+.bi-geo-alt:hover {
+  color: rgb(13, 227, 13);
+}
+
 @media (min-width: 600px) {
   .container {
     max-width: 1200px;

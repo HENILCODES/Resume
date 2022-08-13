@@ -20,7 +20,7 @@ function About(props) {
           <div className="block">Phone </div>
           <div className="block">{props.number}</div>
           <div className="block">Address </div>
-          <div className="block">{props.address}</div>
+          <div className="block">{props.address}  <a href="https://goo.gl/maps/mixcNp5zhomBYMEA7" class="bi bi-geo-alt"></a> </div>
         </div>
       </div>
       <div className="other_about">
