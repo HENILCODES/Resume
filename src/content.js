@@ -24,7 +24,7 @@ function About(props) {
         </div>
       </div>
       <div className="other_about">
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium distinctio nobis velit optio tempore! Eos, ex! Doloribus laudantium architecto quisquam laboriosam hic odio tempora neque, consectetur ducimus quae, ex iusto.</p>
+        
       </div>
     </div>
   );
@@ -37,23 +37,29 @@ function Knowledge() {
       <div className="knowledge spaceTop">
         <div className="blocks">
           <div className="konwledge_blook">
-            <h2>Web-Site Dev</h2>
+            <h2>Know about</h2>
             <div className="icon_box">
               {Icon_Detail("fa fa-brands fa-html5", "html")}
               {Icon_Detail("fa fa-brands fa-css3-alt", "CSS")}
               {Icon_Detail("fa fa-brands fa-sass", "sass")}
               {Icon_Detail("fa fa-brands fa-square-js", "js")}
               {Icon_Detail("icon-jquery", "jquery")}
-              {Icon_Detail("fa fa-brands fa-php", "php")}
+              {Image_Detail(
+                "https://cdn.cdnlogo.com/logos/v/82/visual-studio-code.svg",
+                "V S code"
+              )}
+              {Icon_Detail("fa fa-brands fa-github", "github")}
+              {Icon_Detail("fa fa-brands fa-git-alt", "git")}
               {Icon_Detail("bi bi-server", "DBMS")}
             </div>
           </div>
           <div className="konwledge_blook">
-            <h2>Basic Knowledge</h2>
+            <h2>Basic </h2>
             <div className="icon_box">
               {Icon_Detail("icon-mongodb", "Mongodb")}
               {Icon_Detail("fa fa-brands fa-react", "reactjs")}
               {Icon_Detail("fa fa-brands fa-bootstrap", "Bootstrap")}
+              {Icon_Detail("fa fa-brands fa-php", "php")}
               {Image_Detail(
                 "https://miro.medium.com/max/800/1*BBYoIy6qy2jmBtOMJx7Ndw.png",
                 "ajax"
@@ -65,17 +71,6 @@ function Knowledge() {
               {Icon_Detail("fa fa-brands fa-python", "python")}
               {Icon_Detail("fa fa-brands fa-c", "C/C++")}
               {Icon_Detail("fa fa-brands fa-java", "java")}
-            </div>
-          </div>
-          <div className="konwledge_blook">
-            <h2>Other</h2>
-            <div className="icon_box">
-              {Image_Detail(
-                "https://cdn.cdnlogo.com/logos/v/82/visual-studio-code.svg",
-                "V S code"
-              )}
-              {Icon_Detail("fa fa-brands fa-github", "github")}
-              {Icon_Detail("fa fa-brands fa-git-alt", "git")}
             </div>
           </div>
         </div>

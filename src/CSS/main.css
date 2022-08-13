@@ -33,9 +33,18 @@
   text-align: center;
 }
 
+.thank {
+  height: 400px;
+  width: 100%;
+  display: grid;
+  align-items: center;
+  text-align: center;
+}
+
 * {
   margin: 0;
   padding: 0;
+  transition: 0.5s;
   box-sizing: border-box;
 }
 
@@ -53,7 +62,7 @@
 
 body {
   color: var(--font-white);
-  transition: 0.5s;
+  transition: 1s;
   background: var(--back-color);
   background: linear-gradient(to right, #191717, var(--back-color));
   font-family: var(--body-font);
@@ -71,8 +80,9 @@ body {
   font-weight: bold;
   text-transform: uppercase;
 }
-.header .social i {
-  margin-right: 20px;
+.header .social a {
+  color: white;
+  margin-right: 30px;
 }
 
 .container {
@@ -163,7 +173,7 @@ body {
 }
 
 .spaceTop {
-  margin-top: 45px;
+  margin-top: 60px;
 }
 
 .about {
@@ -241,19 +251,34 @@ body {
 .project .project_name .link a {
   text-decoration: none;
   color: white;
+  font-size: 1.5rem;
+  border-radius: 20px;
+  padding: 10px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+.project .project_name .link a:hover {
+  box-shadow: 0 0 10px rgb(138, 136, 136);
+  border-bottom: 8px double red;
+  -webkit-text-decoration: double;
+          text-decoration: double;
+}
+
+h1 {
+  font-size: 2.3rem;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .footer {
   width: 100%;
   background-color: #1a1a1a;
-  height: 100px;
+  height: 70px;
   display: grid;
-  margin-top: 200px;
   align-items: center;
   text-align: center;
 }
 .footer span {
-  font-size: 2rem;
+  opacity: 0.4;
+  font-size: 1.2rem;
 }
 
 .fa-react {
