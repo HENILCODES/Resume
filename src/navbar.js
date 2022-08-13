@@ -11,9 +11,6 @@ function Navbar() {
         <li>
           <a href="#projects">Project</a>
         </li>
-        <li>
-          <a href="/">Contact</a>
-        </li>
       </nav>
       <hr className="hr" />
     </div>

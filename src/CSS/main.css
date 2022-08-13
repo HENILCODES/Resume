@@ -234,6 +234,26 @@ body {
 
 .project .project_name {
   margin-left: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.project .project_name .link a {
+  text-decoration: none;
+  color: white;
+}
+
+.footer {
+  width: 100%;
+  background-color: #1a1a1a;
+  height: 100px;
+  display: grid;
+  margin-top: 200px;
+  align-items: center;
+  text-align: center;
+}
+.footer span {
+  font-size: 2rem;
 }
 
 .fa-react {
