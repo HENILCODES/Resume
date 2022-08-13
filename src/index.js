@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import {Header,Social} from './header';
 import Navbar from './navbar';
 import {About,Knowledge} from './content';
+import { Project } from './project';
 import './CSS/main.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -13,6 +14,7 @@ root.render(
     <Navbar />
     <About email="henilcode@gmail.com" address="Vapi Gunjan" number="9081807209" />
     <Knowledge />
+    <Project/>
   </React.StrictMode>
 );
 

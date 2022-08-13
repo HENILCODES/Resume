@@ -1,8 +1,8 @@
 function About(props) {
   return (
-    <div className="box">
+    <div className="box" id="about">
       <h1>About Me</h1>
-      <div className="about spaceTop" id="about">
+      <div className="about spaceTop">
         <div className="title">
           <div className="me">
             <p>
@@ -23,34 +23,36 @@ function About(props) {
           <div className="block">{props.address}</div>
         </div>
       </div>
+      <div className="other_about">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium distinctio nobis velit optio tempore! Eos, ex! Doloribus laudantium architecto quisquam laboriosam hic odio tempora neque, consectetur ducimus quae, ex iusto.</p>
+      </div>
     </div>
   );
 }
 
 function Knowledge() {
   return (
-    <div className="box">
+    <div className="box" id="konwledge">
       <h1>Knowledge</h1>
       <div className="knowledge spaceTop">
         <div className="blocks">
           <div className="konwledge_blook">
-            <h4>Web Language</h4>
+            <h2>Web-Site Dev</h2>
             <div className="icon_box">
               {Icon_Detail("fa fa-brands fa-html5", "html")}
               {Icon_Detail("fa fa-brands fa-css3-alt", "CSS")}
-              {Icon_Detail("fa fa-brands fa-square-js", "js")}
-              {Icon_Detail("fa fa-brands fa-php", "php")}
-              {Icon_Detail("fa fa-brands fa-git-alt", "git")}
               {Icon_Detail("fa fa-brands fa-sass", "sass")}
+              {Icon_Detail("fa fa-brands fa-square-js", "js")}
               {Icon_Detail("icon-jquery", "jquery")}
+              {Icon_Detail("fa fa-brands fa-php", "php")}
+              {Icon_Detail("bi bi-server", "DBMS")}
             </div>
           </div>
           <div className="konwledge_blook">
-            <h4>Basic Knowledge</h4>
+            <h2>Basic Knowledge</h2>
             <div className="icon_box">
               {Icon_Detail("icon-mongodb", "Mongodb")}
               {Icon_Detail("fa fa-brands fa-react", "reactjs")}
-              {Icon_Detail("bi bi-server", "DBMS")}
               {Icon_Detail("fa fa-brands fa-bootstrap", "Bootstrap")}
               {Image_Detail(
                 "https://miro.medium.com/max/800/1*BBYoIy6qy2jmBtOMJx7Ndw.png",
@@ -66,13 +68,14 @@ function Knowledge() {
             </div>
           </div>
           <div className="konwledge_blook">
-            <h4>Software</h4>
+            <h2>Other</h2>
             <div className="icon_box">
               {Image_Detail(
                 "https://cdn.cdnlogo.com/logos/v/82/visual-studio-code.svg",
                 "V S code"
               )}
               {Icon_Detail("fa fa-brands fa-github", "github")}
+              {Icon_Detail("fa fa-brands fa-git-alt", "git")}
             </div>
           </div>
         </div>

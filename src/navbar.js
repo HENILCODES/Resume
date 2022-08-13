@@ -3,13 +3,13 @@ function Navbar() {
     <div className="nav">
       <nav>
         <li>
-          <a href="/">about</a>
+          <a href="#about">about</a>
         </li>
         <li>
-          <a href="/">knowledge</a>
+          <a href="#konwledge">knowledge</a>
         </li>
         <li>
-          <a href="/">Project</a>
+          <a href="#projects">Project</a>
         </li>
         <li>
           <a href="/">Contact</a>
