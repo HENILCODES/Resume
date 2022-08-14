@@ -30,7 +30,8 @@ function About(props) {
         </div>
       </div>
       <div className="other_about">
-        {/* <p>i am use Visual Studio Code last 3 year for website development. </p> */}
+        <p>	I am Contribute Time for My Education, Knowledge and Work's. I have interest about Technology and learn programming language. I have Interest about Develop Website.</p>
+        <p>i am use Visual Studio Code last 3 year for website development. if any problem when create Web site than i am solve error by self else solve help by google.</p>
       </div>
     </div>
   );
