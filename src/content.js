@@ -4,7 +4,7 @@ function About(props) {
       <h1>About Me</h1>
       <div className="about spaceTop">
         <div className="title">
-          <div className="me">
+          <div className="me capitalize">
             <p>
               Hello! I'm Web Devloper.I am study in BCA. I am Know about Web
               Design. I am a skilled Front-end Developer and also Knowledge
@@ -25,13 +25,19 @@ function About(props) {
             <a
               href="https://goo.gl/maps/mixcNp5zhomBYMEA7"
               className="bi bi-geo-alt"
-            > </a>{" "}
+            >
+              {" "}
+            </a>{" "}
           </div>
         </div>
       </div>
-      <div className="other_about">
-        <p>	I am Contribute Time for My Education, Knowledge and Work's. I have interest about Technology and learn programming language. I have Interest about Develop Website.</p>
-        <p>i am use Visual Studio Code last 3 year for website development. if any problem when create Web site than i am solve error by self else solve help by google.</p>
+      <div className="other_about capitalize text-center">
+        <p>
+          {" "}
+          I am Contribute Time for My Education, Knowledge and Work's. I have
+          interest about Technology and learn programming language. I have
+          Interest about Develop Website.
+        </p>
       </div>
     </div>
   );
@@ -39,50 +45,57 @@ function About(props) {
 
 function Knowledge() {
   return (
-    <div className="box" id="konwledge">
-      <h1>Knowledge</h1>
-      <div className="knowledge spaceTop">
-        <div className="blocks">
-          <div className="konwledge_blook">
-            <h2>Know about</h2>
-            <div className="icon_box">
-              {Icon_Detail("fa fa-brands fa-html5", "html")}
-              {Icon_Detail("fa fa-brands fa-css3-alt", "CSS")}
-              {Icon_Detail("fa fa-brands fa-sass", "sass")}
-              {Icon_Detail("fa fa-brands fa-square-js", "js")}
-              {Icon_Detail("icon-jquery", "jquery")}
-              {Image_Detail(
-                "https://cdn.cdnlogo.com/logos/v/82/visual-studio-code.svg",
-                "V S code"
-              )}
-              {Icon_Detail("fa fa-brands fa-github", "github")}
-              {Icon_Detail("fa fa-brands fa-git-alt", "git")}
-              {Icon_Detail("bi bi-server", "DBMS")}
+    <>
+      <div className="box" id="konwledge">
+        <h1>Knowledge</h1>
+        <div className="knowledge spaceTop">
+          <div className="blocks">
+            <div className="konwledge_blook">
+              <h2>Know about</h2>
+              <div className="icon_box">
+                {Icon_Detail("fa fa-brands fa-html5", "html")}
+                {Icon_Detail("fa fa-brands fa-css3-alt", "CSS")}
+                {Icon_Detail("fa fa-brands fa-sass", "sass")}
+                {Icon_Detail("fa fa-brands fa-square-js", "js")}
+                {Icon_Detail("icon-jquery", "jquery")}
+                {Image_Detail(
+                  "https://cdn.cdnlogo.com/logos/v/82/visual-studio-code.svg",
+                  "V S code"
+                )}
+                {Icon_Detail("fa fa-brands fa-github", "github")}
+                {Icon_Detail("fa fa-brands fa-git-alt", "git")}
+                {Icon_Detail("bi bi-server", "DBMS")}
+              </div>
             </div>
-          </div>
-          <div className="konwledge_blook">
-            <h2>Basic </h2>
-            <div className="icon_box">
-              {Icon_Detail("icon-mongodb", "Mongodb")}
-              {Icon_Detail("fa fa-brands fa-react", "reactjs")}
-              {Icon_Detail("fa fa-brands fa-bootstrap", "Bootstrap")}
-              {Icon_Detail("fa fa-brands fa-php", "php")}
-              {Image_Detail(
-                "https://miro.medium.com/max/800/1*BBYoIy6qy2jmBtOMJx7Ndw.png",
-                "ajax"
-              )}
-              {Image_Detail(
-                "https://cdn.cdnlogo.com/logos/m/48/microsoft-dot-net.svg",
-                ".net"
-              )}
-              {Icon_Detail("fa fa-brands fa-python", "python")}
-              {Icon_Detail("fa fa-brands fa-c", "C/C++")}
-              {Icon_Detail("fa fa-brands fa-java", "java")}
+            <div className="konwledge_blook">
+              <h2>Basic </h2>
+              <div className="icon_box">
+                {Icon_Detail("fa fa-brands fa-react", "reactjs")}
+                {Icon_Detail("fa fa-brands fa-bootstrap", "Bootstrap")}
+                {Icon_Detail("icon-mongodb", "Mongodb")}
+                {Icon_Detail("fa fa-brands fa-php", "php")}
+                {Image_Detail(
+                  "https://miro.medium.com/max/800/1*BBYoIy6qy2jmBtOMJx7Ndw.png",
+                  "ajax"
+                )}
+                {Image_Detail(
+                  "https://cdn.cdnlogo.com/logos/m/48/microsoft-dot-net.svg",
+                  ".net"
+                )}
+                {Icon_Detail("fa fa-brands fa-python", "python")}
+                {Icon_Detail("fa fa-brands fa-c", "C/C++")}
+                {Icon_Detail("fa fa-brands fa-java", "java")}
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+      <div className="box text-center spaceTop">
+        <p>
+          i am use Visual Studio Code editor last 3 year for website development and use git for store code. i have basic knowledge of website hosting. 
+        </p>
+      </div>
+    </>
   );
 }
 function Image_Detail(Isrc, Ititle) {
