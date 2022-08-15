@@ -7,7 +7,7 @@
 
 # testing
 /coverage
-
+*.css.map
 # production
 /build
 
