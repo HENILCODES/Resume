@@ -103,17 +103,20 @@ body {
   .header .social a {
     margin-right: 30px;
   }
+  .box {
+    padding-top: 40px;
+  }
   .title_name {
     font-size: 2.6rem;
-  }
-  .nav nav li {
-    margin: 10px 29px;
   }
   .nav nav li a {
     font-size: 1.6rem;
   }
 }
 @media (max-width: 600px) {
+  #root {
+    margin-top: 30px;
+  }
   .header {
     font-size: 1.4rem;
   }
@@ -124,13 +127,10 @@ body {
     height: 300px !important;
   }
   .title_name {
-    font-size: 1.8rem;
-  }
-  .nav nav li {
-    margin: 5px 12px;
+    font-size: 1.7rem;
   }
   .nav nav li a {
-    font-size: 1.2rem !important;
+    font-size: 1rem !important;
   }
 }
 .span {
@@ -167,6 +167,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  justify-content: space-around;
 }
 .container .nav nav li {
   list-style: none;
@@ -180,9 +181,6 @@ body {
 }
 .container .nav nav li a:hover {
   border-bottom: 3px solid white;
-}
-.container .box {
-  padding-top: 50px;
 }
 
 @-webkit-keyframes change {
@@ -231,7 +229,7 @@ body {
 }
 
 .spaceTop {
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 @media (max-width: 600px) {
@@ -242,12 +240,23 @@ body {
     margin-top: 40px;
   }
   .about .block:nth-child(even) {
-    font-size: 0.9rem !important;
+    font-size: 0.8rem !important;
+  }
+  .me p {
+    font-size: 14px;
+  }
+  .other_about {
+    margin-top: 45px;
   }
 }
 @media (min-width: 600px) {
   .about {
     display: flex;
+  }
+  .other_about {
+    width: 90%;
+    margin: auto;
+    margin-top: 45px;
   }
 }
 .about {
@@ -276,13 +285,8 @@ body {
   font-weight: bold;
   color: #d48eff;
   font-size: 1.2rem;
+  max-width: 100px;
   text-transform: uppercase;
-}
-
-.other_about {
-  width: 90%;
-  margin: auto;
-  margin-top: 45px;
 }
 
 .knowledge .konwledge_blook {

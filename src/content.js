@@ -31,7 +31,7 @@ function About(props) {
           </div>
         </div>
       </div>
-      <div className="other_about capitalize">
+      <div className="other_about capitalize me">
         <p>
           {" "}
           I am Contribute Time for My Education, Knowledge and Work's. I have
