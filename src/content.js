@@ -18,7 +18,7 @@ function About(props) {
           <div className="block">Email </div>
           <div className="block">{props.email}</div>
           <div className="block">Phone </div>
-          <div className="block">{props.number}</div>
+          <div className="block">{props.number} <a className="bi bi-whatsapp" href="https://wa.me/919081807209/?text=Hi"> </a> </div>
           <div className="block">Address </div>
           <div className="block">
             {props.address}{" "}
@@ -31,7 +31,7 @@ function About(props) {
           </div>
         </div>
       </div>
-      <div className="other_about capitalize text-center">
+      <div className="other_about capitalize">
         <p>
           {" "}
           I am Contribute Time for My Education, Knowledge and Work's. I have
