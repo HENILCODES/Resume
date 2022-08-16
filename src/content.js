@@ -35,8 +35,7 @@ function About(props) {
         <p>
           {" "}
           I am Contribute Time for My Education, Knowledge and Work's. I have
-          interest about Technology and learn programming language. I have
-          Interest about Develop Website.
+          interest about Technology and learn programming language. i know about web development.
         </p>
       </div>
     </div>
@@ -55,9 +54,9 @@ function Knowledge() {
               <div className="icon_box">
                 {Icon_Detail("fa fa-brands fa-html5", "html")}
                 {Icon_Detail("fa fa-brands fa-css3-alt", "CSS")}
-                {Icon_Detail("fa fa-brands fa-sass", "sass")}
                 {Icon_Detail("fa fa-brands fa-square-js", "js")}
                 {Icon_Detail("icon-jquery", "jquery")}
+                {Icon_Detail("fa fa-brands fa-sass", "sass")}
                 {Image_Detail(
                   "https://cdn.cdnlogo.com/logos/v/82/visual-studio-code.svg",
                   "V S code"
@@ -90,7 +89,7 @@ function Knowledge() {
           </div>
         </div>
       </div>
-      <div className="box text-center spaceTop">
+      <div className="box me spaceTop">
         <p>
           i am use Visual Studio Code editor last 3 year for website development and use git for store code. i have basic knowledge of website hosting. 
         </p>
