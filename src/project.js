@@ -5,19 +5,19 @@ function Project() {
       <div className="project spaceTop">
         <div className="project_name">
           <div className="link">
-            <a href="https://henilcodes.github.io/PH/">Henil Code</a>
+            <a target='blank' href="https://henilcodes.github.io/PH/">Henil Code</a>
           </div>
           <div className="link">
-            <a href="https://henilcode.rf.gd/Live_Chat/">Live Chat</a>
+            <a target='blank' href="https://henilcode.rf.gd/Live_Chat/">Live Chat</a>
           </div>
           <div className="link">
-            <a href="https://henilcode.rf.gd/Music/">Music Site</a>
+            <a target='blank' href="https://henilcode.rf.gd/Music/">Music Site</a>
           </div>
           <div className="link">
-            <a href="https://henilcode.wordpress.com/">Wordpress Site</a>
+            <a target='blank' href="https://henilcode.wordpress.com/">Wordpress Site</a>
           </div>
           <div className="link">
-            <a href="https://henilcodes.github.io/PH/project.html">More Projects</a>
+            <a target='blank' href="https://henilcodes.github.io/PH/project.html">More Projects</a>
           </div>
         </div>
       </div>

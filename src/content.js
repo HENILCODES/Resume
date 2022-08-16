@@ -22,7 +22,7 @@ function About(props) {
           <div className="block">Address </div>
           <div className="block">
             {props.address}{" "}
-            <a
+            <a target='blank'
               href="https://goo.gl/maps/mixcNp5zhomBYMEA7"
               className="bi bi-geo-alt"
             >
@@ -63,16 +63,16 @@ function Knowledge() {
                 )}
                 {Icon_Detail("fa fa-brands fa-github", "github")}
                 {Icon_Detail("fa fa-brands fa-git-alt", "git")}
-                {Icon_Detail("bi bi-server", "DBMS")}
+                {Icon_Detail("fa fa-brands fa-bootstrap", "Bootstrap")}
               </div>
             </div>
             <div className="konwledge_blook">
               <h2>Basic </h2>
               <div className="icon_box">
                 {Icon_Detail("fa fa-brands fa-react", "reactjs")}
-                {Icon_Detail("fa fa-brands fa-bootstrap", "Bootstrap")}
                 {Icon_Detail("icon-mongodb", "Mongodb")}
                 {Icon_Detail("fa fa-brands fa-php", "php")}
+                {Icon_Detail("bi bi-server", "DBMS")}
                 {Image_Detail(
                   "https://miro.medium.com/max/800/1*BBYoIy6qy2jmBtOMJx7Ndw.png",
                   "ajax"

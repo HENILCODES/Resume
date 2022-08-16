@@ -22,9 +22,9 @@ function Social(props) {
         <span>{props.nikename}</span>
       </div>
       <div className="social">
-        <a href='https://github.com/HENILCODES' className="bi bi-github"></a>
-        <a href='https://www.facebook.com/henil.prajapati.376' className="bi bi-facebook"></a>
-        <a href='https://www.instagram.com/henil_v_p/' className="bi bi-instagram"></a>
+        <a href='https://github.com/HENILCODES' target='blank'><i className="bi bi-github"></i></a>
+        <a href='https://www.facebook.com/henil.prajapati.376' target='blank'><i className="bi bi-facebook"></i></a>
+        <a href='https://www.instagram.com/henil_v_p/' target='blank'><i className="bi bi-instagram"></i></a>
       </div>
     </div>
   );

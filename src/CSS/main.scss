@@ -96,6 +96,7 @@ body {
     .social {
         a {
             color: inherit;
+            text-decoration: none;
         }
     }
 }
@@ -147,6 +148,8 @@ body {
 
     .top {
         height: 300px !important;
+        max-width: 300px;
+        margin: auto;
     }
 
     .title_name {
@@ -601,7 +604,6 @@ h2 {
         max-width: 1200px;
         margin-top: 35px;
     }
-
     img {
         width: 150px;
     }
