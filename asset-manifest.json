@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/resume/static/css/main.700ee757.css",
-    "main.js": "/resume/static/js/main.04b2f57d.js",
+    "main.css": "/resume/static/css/main.0e008734.css",
+    "main.js": "/resume/static/js/main.99fdfd51.js",
     "static/media/Henil.ico": "/resume/static/media/Henil.cf00f3589441d9cdb4df.ico",
     "index.html": "/resume/index.html",
-    "main.700ee757.css.map": "/resume/static/css/main.700ee757.css.map",
-    "main.04b2f57d.js.map": "/resume/static/js/main.04b2f57d.js.map"
+    "main.0e008734.css.map": "/resume/static/css/main.0e008734.css.map",
+    "main.99fdfd51.js.map": "/resume/static/js/main.99fdfd51.js.map"
   },
   "entrypoints": [
-    "static/css/main.700ee757.css",
-    "static/js/main.04b2f57d.js"
+    "static/css/main.0e008734.css",
+    "static/js/main.99fdfd51.js"
   ]
 }
