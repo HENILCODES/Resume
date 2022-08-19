@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+
+import "./App.css";
 
 function App() {
+  const [mun, setN] = useState("1");
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Hello {mun} </h1>
+        <input type="number" id="Num" />
+          <button type="button" onClick={() => setN(document.querySelector("#Num").value)}>Click</button>
+        {/* <button onClick={() => useN("N + 1")}> */}
       </header>
     </div>
   );
 }
+// function FavoriteColor() {
+//   const [color, setColor] = useState("red");
+
+//   return (
+//     <>
+//       <h1>My favorite color is {color}!</h1>
+//       <button type="button" onClick={() => setColor("blue")}>
+//         Blue
+//       </button>
+//       <button type="button" onClick={() => setColor("red")}>
+//         Red
+//       </button>
+//       <button type="button" onClick={() => setColor("pink")}>
+//         Pink
+//       </button>
+//       <button type="button" onClick={() => setColor("green")}>
+//         Green
+//       </button>
+//     </>
+//   );
+// }
 
 export default App;
