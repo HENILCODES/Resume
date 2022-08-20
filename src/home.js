@@ -13,7 +13,6 @@ export default function Textfun() {
 
   //Count Word
   let WordCount = Text.split(' ').filter((n)=>{return n !== ''}).length;
-  // WordCount.toString().split(' ,')
 
   // Count Character
   let CharacteCount = Text.trim().split('').filter((n)=>{return n !==' '}).length;
@@ -31,15 +30,26 @@ export default function Textfun() {
   }
   
   // capitlize
-  let capitalizeCase = ()=>{
+  let TitleCase = ()=>{
     let toSplit= Text.split(' ');
     let strin = toSplit.map((n)=>{
       return n.charAt(0).toUpperCase() + n.slice(1);
     })
-    let realCapital = strin.toString();
-    console.log(realCapital);
+    let realCapital = strin.join(" ");
     setText(realCapital);
   }
+
+
+  // sentence Case
+  let sentenceCase = ()=>{
+    let toSplit= Text.split('.');
+    let strin = toSplit.map((n)=>{
+      return n.charAt(0).toUpperCase() + n.slice(1);
+    })
+    let sentence = strin.join(".");
+    setText(sentence);
+  }
+
 
   // Copy Text
   let copyText = ()=>{
@@ -53,7 +63,7 @@ export default function Textfun() {
       <div className="my-5">
         <textarea
           className="form-control border border-info bg-info text-wrap bg-opacity-10 rounded-end"
-          placeholder="Type Word"
+          placeholder="Type Word Hear ....."
           style={{ height: "300px" }}
           id="Textarea"
           value={Text}
@@ -81,6 +91,16 @@ export default function Textfun() {
       </div>
       <div className="d-flex flex-wrap container">
         <div className="m-2">
+          <button type="button gap-3" className="btn btn-primary" onClick={sentenceCase}>
+            Sentence Case
+          </button>
+        </div>
+        <div className="m-2">
+          <button type="button gap-3" className="btn btn-primary" onClick={TitleCase}>
+            Tital Case
+          </button>
+        </div>
+        <div className="m-2">
           <button type="button gap-3" className="btn btn-primary" onClick={upperCase}>
             UpperCase
           </button>
@@ -88,11 +108,6 @@ export default function Textfun() {
         <div className="m-2">
           <button type="button gap-3" className="btn btn-primary" onClick={lowerCase}>
             LowerCase
-          </button>
-        </div>
-        <div className="m-2">
-          <button type="button gap-3" className="btn btn-primary" onClick={capitalizeCase}>
-            Capitlize
           </button>
         </div>
         <div className="m-2">
