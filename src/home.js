@@ -58,6 +58,12 @@ export default function Textfun() {
     navigator.clipboard.writeText(CopyTexT.value);
   }
 
+  // removeSpace
+  let removeSpace = ()=>{
+    let t = Text.split(/[ ]+/); 
+    setText(t.join());
+  }
+
   return (
     <div className="pt-5 w-75 m-auto">
       <div className="my-5">
@@ -113,6 +119,11 @@ export default function Textfun() {
         <div className="m-2">
           <button type="button gap-3" className="btn btn-primary" onClick={copyText}>
             Copy
+          </button>
+        </div>
+        <div className="m-2">
+          <button type="button gap-3" className="btn btn-primary" onClick={removeSpace}>
+            Remove Space
           </button>
         </div>
         <div className="m-2">
