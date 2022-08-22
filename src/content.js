@@ -41,7 +41,33 @@ function About(props) {
     </div>
   );
 }
-
+function Education(){
+  return(
+    <div className="box" id="Education">
+      <h1>Education</h1>
+      <div className="spaceTop">
+        <div className="konwledge_blook">
+            <details open>
+              <summary>College</summary>
+              <div className="me">
+                <p>R K Desai College Vapi</p>
+                <p>Status : Runing</p>
+                <p>SGPA : 8.1</p>
+              </div>
+            </details>
+            <details open>
+              <summary>12<sup>TH</sup></summary>
+              <div className="me">
+                <p>Desai N.D.N High School Vapi</p>
+                <p>Status : Complet</p>
+                <p>Result : 52.26</p>
+              </div>
+            </details>
+        </div>
+      </div>
+    </div>
+  )
+}
 function Knowledge() {
   return (
     <>
@@ -121,4 +147,4 @@ function Icon_Detail(code, title) {
     </div>
   );
 }
-export { About, Knowledge };
+export { About, Knowledge ,Education };

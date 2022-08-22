@@ -6,6 +6,9 @@ function Navbar() {
           <a href="#about">about</a>
         </li>
         <li>
+          <a href="#Education">Education</a>
+        </li>
+        <li>
           <a href="#konwledge">knowledge</a>
         </li>
         <li>
