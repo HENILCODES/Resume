@@ -61,11 +61,11 @@ export default function Textfun() {
   // removeSpace
   let removeSpace = ()=>{
     let t = Text.split(/[ ]+/); 
-    setText(t.join());
+    setText(t.join(" "));
   }
 
   return (
-    <div className="pt-5 w-75 m-auto">
+    <div className="w-75 m-auto">
       <div className="my-5">
         <textarea
           className="form-control border border-info bg-info text-wrap bg-opacity-10 rounded-end"
