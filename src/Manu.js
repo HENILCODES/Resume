@@ -1,22 +1,22 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
-function Manu() {
+function Manu(props) {
   return (
-    <nav class="navbar navbar-expand-lg bg-light fixed-top">
-      <div class="container-fluid ">
-        <Link class="navbar-brand" to="/">
+    <nav className="navbar navbar-expand-lg bg-light fixed-top shadow">
+      <div className="container-fluid ">
+        <Link className="navbar-brand" to="/">
           Text Editor
         </Link>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav d-flex">
-            <li class="nav-item">
-              <Link class="nav-link" aria-current="page" to="/">
+        <div className="navbar-collapse">
+          <ul className="navbar-nav d-flex">
+            <li className="nav-item">
+              <NavLink className={props.Home ? "nav-link active" : "nav-link"} to="/">
                 Home
-              </Link>
+              </NavLink>
             </li>
-            <li class="nav-item">
-              <Link class="nav-link" to="/Calculater">
+            <li className="nav-item">
+              <Link className={props.Calculate ? "nav-link active" : "nav-link"} to="/Calculater">
                 Calculater
               </Link>
             </li>

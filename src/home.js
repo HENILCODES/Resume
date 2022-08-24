@@ -97,11 +97,6 @@ export default function Textfun() {
       </div>
       <div className="d-flex flex-wrap container">
         <div className="m-2">
-          <button type="button gap-3" className="btn btn-primary" onClick={sentenceCase}>
-            Sentence Case
-          </button>
-        </div>
-        <div className="m-2">
           <button type="button gap-3" className="btn btn-primary" onClick={TitleCase}>
             Tital Case
           </button>
@@ -114,6 +109,11 @@ export default function Textfun() {
         <div className="m-2">
           <button type="button gap-3" className="btn btn-primary" onClick={lowerCase}>
             LowerCase
+          </button>
+        </div>
+        <div className="m-2">
+          <button type="button gap-3" className="btn btn-primary" onClick={sentenceCase}>
+            Sentence Case
           </button>
         </div>
         <div className="m-2">
