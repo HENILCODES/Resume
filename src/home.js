@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 
 export default function Textfun() {
-  const [Text, setText] = useState("");
 
+  const [Text, setText] = useState("");
+  
   // handel textarea
   const textareaClick = (event) => {
     setText(event.target.value);
@@ -12,10 +13,10 @@ export default function Textfun() {
   let TextLength = Text.length;
 
   //Count Word
-  let WordCount = Text.split(' ').filter((n)=>{return n !== ''}).length;
+  let WordCount = Text.split(/\s+/).filter((n)=>{return n.length!== 0}).length;
 
   // Count Character
-  let CharacteCount = Text.trim().split('').filter((n)=>{return n !==' '}).length;
+  let CharacteCount = Text.trim().split('').filter((n)=>{return n.length !==0}).length;
 
   // Upppercase
   let upperCase = ()=>{
@@ -31,7 +32,7 @@ export default function Textfun() {
   
   // capitlize
   let TitleCase = ()=>{
-    let toSplit= Text.split(' ');
+    let toSplit= Text.split(/\s+/);
     let strin = toSplit.map((n)=>{
       return n.charAt(0).toUpperCase() + n.slice(1);
     })
@@ -53,9 +54,7 @@ export default function Textfun() {
 
   // Copy Text
   let copyText = ()=>{
-    var CopyTexT = document.getElementById("Textarea");
-    CopyTexT.select();
-    navigator.clipboard.writeText(CopyTexT.value);
+    navigator.clipboard.writeText(Text);
   }
 
   // removeSpace
