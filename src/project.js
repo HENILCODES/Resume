@@ -8,10 +8,10 @@ function Project() {
             <a target='blank' href="https://henilcodes.github.io/PH/">Henil Code</a>
           </div>
           <div className="link">
-            <a target='blank' href="https://henilcode.rf.gd/Live_Chat/">Live Chat</a>
+            <a target='blank' href="https://henil.rf.gd/Live_Chat/">Live Chat</a>
           </div>
           <div className="link">
-            <a target='blank' href="https://henilcode.rf.gd/Music/">Music Site</a>
+            <a target='blank' href="https://henil.rf.gd/Music/">Music Site</a>
           </div>
           <div className="link">
             <a target='blank' href="https://henilcode.wordpress.com/">Wordpress Site</a>
