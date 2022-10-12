@@ -20,13 +20,24 @@ export default function App() {
       </>
     )
   }
+  let Home = ()=>{
+    return(
+      <>
+        <div className="container text-center">
+          <h3>That Website Create For String Editing.</h3>
+          <h4 className="pt-2">You can also Find Multiplication table.</h4>
+        </div>
+      </>
+    )
+  }
   return (
     <>
       <Router>
         <Manu />
-        <div className="my-5 py-1"></div>
+        <div className="my-5 pb-5"></div>
         <Routes>
-          <Route path="/" element={<Text />} />
+          <Route path="/TextEdit" element={<Home />} />
+          <Route path="/String" element={<Text />} />
           <Route path="/Calculater" element={<Calculat />} />
         </Routes>
       </Router>

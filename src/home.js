@@ -30,7 +30,7 @@ export default function Textfun() {
     setText(toLower);
   }
   
-  // capitlize
+  // TitleCase
   let TitleCase = ()=>{
     let toSplit= Text.split(/\s+/);
     let strin = toSplit.map((n)=>{
@@ -94,7 +94,7 @@ export default function Textfun() {
           </div>
         </div>
       </div>
-      <div className="d-flex flex-wrap container">
+      <div className="d-flex flex-wrap container-sm">
         <div className="m-2">
           <button type="button gap-3" className="btn btn-primary" onClick={TitleCase}>
             Tital Case
