@@ -1,7 +1,8 @@
 import React from "react";
+import PropTypes from "prop-types"
 import { Link, NavLink } from "react-router-dom";
 
-function Manu(props) {
+export default function Manu(props) {
   return (
     <nav className="navbar navbar-expand-lg bg-light fixed-top shadow">
       <div className="container-fluid ">
@@ -11,12 +12,12 @@ function Manu(props) {
         <div className="navbar-collapse">
           <ul className="navbar-nav d-flex">
             <li className="nav-item">
-              <NavLink className={props.Home ? "nav-link active" : "nav-link"} to="/">
+              <NavLink className={props.Home ? "nav-link active fw-bold" : "nav-link"} to="/">
                 Home
               </NavLink>
             </li>
             <li className="nav-item">
-              <Link className={props.Calculate ? "nav-link active" : "nav-link"} to="/Calculater">
+              <Link className={props.Calculate ? "nav-link active fw-bold" : "nav-link"} to="/Calculater">
                 Calculater
               </Link>
             </li>
@@ -27,4 +28,6 @@ function Manu(props) {
   );
 }
 
-export default Manu;
+Manu.propType ={
+  Home:PropTypes.string
+}

@@ -16,7 +16,7 @@ export default function Textfun() {
   let WordCount = Text.split(/\s+/).filter((n)=>{return n.length!== 0}).length;
 
   // Count Character
-  let CharacteCount = Text.length;
+  let CharacteCount = Text.trim().split('').filter((n)=>{return n !==' '}).length;
 
   // Upppercase
   let upperCase = ()=>{
@@ -130,6 +130,12 @@ export default function Textfun() {
             Clear
           </button>
         </div>
+      </div>
+      <div className="container mt-4">
+          <h5>Text Preview:</h5>
+          <div className="container ms-2 mt-3">
+          <p>{Text}</p>
+          </div>
       </div>
     </div>
   );
