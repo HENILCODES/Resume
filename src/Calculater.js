@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 export default function Calculater() {
+  const [BtnClick,setBtn] = useState(true);
   let calculate = () => {
     let NumberIS = document.getElementById("Number").value;
+    
     for (let i = 1; i <= 10; i++) {
       document.getElementById("AnswerIs").innerHTML += printTable(NumberIS, i);
+      if (i===10) {
+        setBtn(false);
+      }
     }
   };
   let printTable = (N, i) => {
@@ -15,20 +20,24 @@ export default function Calculater() {
     <td> ${N*i} </td>
   </tr>`;
   };
+
+
+  let clearAns=()=>{
+    document.getElementById("AnswerIs").innerHTML="";
+    setBtn(true);
+  }
   return (
     <div className="container">
       <div className="w-75 m-auto">
         <div className="input-group mb-3">
           <input
-            type="text"
+            type="number"
+            autoComplete="off"
             className="form-control border border-info"
             placeholder="Enter Number"
-            onClick={()=>{document.getElementById("AnswerIs").innerHTML=""}}
             id="Number"
           />
-          <button className="btn btn-primary" onClick={calculate}>
-            Find
-          </button>
+            {BtnClick?<button className="btn btn-primary" onClick={calculate}>Find</button>:<button className="btn btn-primary" onClick={clearAns}>Clear</button>}
         </div>
         <div className="w-50 m-auto pt-5">
           <table

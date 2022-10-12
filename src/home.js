@@ -16,7 +16,7 @@ export default function Textfun() {
   let WordCount = Text.split(/\s+/).filter((n)=>{return n.length!== 0}).length;
 
   // Count Character
-  let CharacteCount = Text.trim().split('').filter((n)=>{return n.length !==0}).length;
+  let CharacteCount = Text.length;
 
   // Upppercase
   let upperCase = ()=>{
