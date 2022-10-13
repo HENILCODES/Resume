@@ -5,7 +5,7 @@ export default function Manu(props) {
   return (
     <nav className="navbar navbar-expand-lg bg-light fixed-top shadow">
       <div className="container-fluid ">
-        <Link className="navbar-brand" to="/textedit">
+        <Link className="navbar-brand" to="/">
           Text Editor
         </Link>
         <div className="navbar-collapse">
