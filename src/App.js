@@ -36,7 +36,7 @@ export default function App() {
         <Manu />
         <div className="my-5 pb-5"></div>
         <Routes>
-          <Route path="/TextEdit" element={<Home />} />
+          <Route path="/textedit" element={<Home />} />
           <Route path="/String" element={<Text />} />
           <Route path="/Calculater" element={<Calculat />} />
         </Routes>
