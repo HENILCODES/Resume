@@ -16,9 +16,9 @@ function About(props) {
           <div className="block">DOB </div>
           <div className="block">15 / February / 2003</div>
           <div className="block">Email </div>
-          <div className="block">{props.email}</div>
+          <div className="block"> <a href="mailto:henilcode@gmail.com" className="white text-decoration-none">{props.email}</a></div>
           <div className="block">Phone </div>
-          <div className="block">{props.number} <a className="bi bi-whatsapp" href="https://wa.me/919081807209/?text=Hi"> </a> </div>
+          <div className="block">  <a href="tel:+919081807209" className="white text-decoration-none" >{props.number}</a> <a className="bi bi-whatsapp" href="https://wa.me/919081807209/?text=Hi"> </a> </div>
           <div className="block">Address </div>
           <div className="block">
             {props.address}{" "}
@@ -117,7 +117,7 @@ function Knowledge() {
       </div>
       <div className="box me spaceTop">
         <p>
-          i am use Visual Studio Code editor last 3 year for website development and use git for store code. i have basic knowledge of website hosting. 
+          i am use Visual Studio Code editor last 3 year for website development and use git & GitHub for store code. i have basic knowledge of website hosting. 
         </p>
       </div>
     </>
