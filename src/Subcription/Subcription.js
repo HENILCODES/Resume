@@ -2,17 +2,16 @@ import Student from '../Student/Student'
 import Container from '../template/Container'
 import './Subcription.css'
 import Subdate from './Subdate'
+import React, { useState } from 'react'
 
 export default function Subcription(props) {
-let title = props.title
+let [title,setTitle] = useState(props.title)
 let onClickHandler = ()=>{
-    title = "chamnge"
-    console.log("cl");
+    setTitle ("chamnge")
 }
     return (
 
         <Container className="box">
-            <h1> {props.id} </h1>
             <div className="date-box">
                 <Subdate date={props.date} />
             </div>
