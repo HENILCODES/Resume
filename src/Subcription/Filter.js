@@ -8,10 +8,9 @@ export default function Filter(props){
         <Container>
             <label >Filter by Year {props.filterVal}</label>
             <select value={props.filterVal} onChange={onselectHandler}>
-                <option value="2000">2000</option>
-                <option value="2001">2001</option>
-                <option value="2002">2002</option>
-                <option value="2003">2003</option>
+                <option value="2020">2020</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
             </select>
         </Container>
     )

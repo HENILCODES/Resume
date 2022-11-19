@@ -1,51 +1,63 @@
 import { useState } from 'react';
 import './App.css';
+import BookList from './BookDetail/BookList';
 import NewSubcription from './NewSubcription/NewSubcription';
 import Filter from './Subcription/Filter';
-import Subcription from './Subcription/Subcription';
+import SubcriptionList from './Subcription/SubcriptionList';
 
 function App() {
+
   let Sub = [
     {
       id: "1",
-      date: (new Date('2003', '1', '15')),
+      date: (new Date('2021', '1', '15')),
       title: "Monthly ",
       ammount: "125.6",
       name: "Henil"
     },
     {
       id: "2",
-      date: (new Date('2000', '3', '2')),
+      date: (new Date('2022', '3', '2')),
       title: "Year ",
       ammount: "5250.6",
       name: "Sivame"
     },
     {
-      id: "30",
-      date: (new Date('1994', '0', '22')),
+      id: "3",
+      date: (new Date('2022', '0', '22')),
       title: "Weekly",
-      ammount: "200",
+      ammount: "2001",
       name: "raj"
     }
   ];
 
-  let addSubHandlers = (data) => {
-    Sub.push(data);
-    console.log(Sub);
+  const [data, setData] = useState(Sub)
+  let addSubHandlers = (dataS) => {
+    setData([dataS, ...Sub])
   }
 
-  const [filter, setfiler] = useState('2003');
+  const [filter, setfiler] = useState('2022');
   let changevalue = (data) => {
-    console.log("App ", data);
     setfiler(data);
   }
+  
+  const filterdata = data.filter((item) => {
+    return item.date.getFullYear().toString() === filter
+  })
+
+  
   return (
-    <div className="App">
-      <NewSubcription onAdd={addSubHandlers} />
-      <Filter onChangeFil={changevalue} filterVal={filter} />
-      <Subcription name={Sub[0].name} date={Sub[0].date} title={Sub[0].title} ammount={Sub[0].ammount} />
-      <Subcription name={Sub[1].name} date={Sub[1].date} title={Sub[1].title} ammount={Sub[1].ammount} />
-      <Subcription name={Sub[2].name} date={Sub[2].date} title={Sub[2].title} ammount={Sub[2].ammount} />
+    <div>
+      <div className="App">
+        <BookList />
+        <NewSubcription onAdd={addSubHandlers} />
+        <Filter onChangeFil={changevalue} filterVal={filter} />
+      </div>
+      <SubcriptionList filterdata={filterdata} />
+      {/* {filterdata.length===0 && <h2>No data</h2>}
+      {filterdata.length !== 0 && filterdata.map((value) => <Subcription key={value.id} name={value.name} date={value.date} title={value.title} ammount={value.ammount} />)} */}
+
+      {/* {filterdata.length === 0 ? <h1>Not Found</h1> : filterdata.map((value) => <Subcription key={value.id} name={value.name} date={value.date} title={value.title} ammount={value.ammount} />)} */}
     </div>
   );
 }
