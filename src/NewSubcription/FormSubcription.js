@@ -57,7 +57,7 @@ const FormSubcription = (props) => {
             </div>
             <div className="controle">
                 <label> ammount </label>
-                <input type="text" min="10" onChange={ammountChange} value={form.userAmmount} />
+                <input type="text" max={10} onChange={ammountChange} value={form.userAmmount} />
             </div>
             <div className="controle">
                 <button type='submit' className="addB">Add Subcription</button>
