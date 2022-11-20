@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import './App.css';
-import BookList from './BookDetail/BookList';
+// import BookList from './BookDetail/BookList';
 import NewSubcription from './NewSubcription/NewSubcription';
 import Filter from './Subcription/Filter';
+// import SubcriptionChart from './Subcription/SubcriptionChart';
 import SubcriptionList from './Subcription/SubcriptionList';
 
 function App() {
@@ -49,9 +50,10 @@ function App() {
   return (
     <div>
       <div className="App">
-        <BookList />
+        {/* <BookList /> */}
         <NewSubcription onAdd={addSubHandlers} />
         <Filter onChangeFil={changevalue} filterVal={filter} />
+        {/* <SubcriptionChart filterdata={filterdata} /> */}
       </div>
       <SubcriptionList filterdata={filterdata} />
       {/* {filterdata.length===0 && <h2>No data</h2>}

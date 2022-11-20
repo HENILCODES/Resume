@@ -2,7 +2,16 @@ import Container from "../template/Container";
 import React, { useState } from 'react'
 
 export default function BookDetailAdd(props) {
-
+    let Book = [
+        {
+            title: 'JAva',
+            desc: "Hello"
+        },
+        {
+            title: 'C',
+            desc: "Good"
+        }
+    ]
     let [book, setBook] = useState({ title: 'aman', desc: 'a' });
     let titleChange = (event) => {
         setBook({ ...book, title: event.target.value })
@@ -12,7 +21,8 @@ export default function BookDetailAdd(props) {
     }
     let submitHandler = (event) => {
         event.preventDefault();
-        props.onSaveData(book);
+        const datass = {title:book.title,desc:book.desc};
+        props.onSaveData([datass,...Book]);
     }
     return (
         <Container className="controle">

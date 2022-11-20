@@ -11,3 +11,10 @@ input{
     padding: 10px;   
     margin: 10px;
 }
+
+.notValid{
+    border: 2px solid red;
+}
+.Valid{
+    border: 2px solid black;
+}

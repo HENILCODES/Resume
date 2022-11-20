@@ -1,15 +1,15 @@
 
 import Container from "../template/Container";
 import FormSubcription from "./FormSubcription"
-import React, { useState } from 'react'
+import React,{useState} from 'react'
 
 const NewSubcription = (props) => {
-    const [show, setShow] = useState(false);
     let onseaveHandler = (data) => {
         const subcripts = { ...data, id: Math.random() }
         props.onAdd(subcripts)
         setShow(false);
     }
+    const [show, setShow] = useState(false);
     let showHide = () => {
         if (show) {
             setShow(false);
