@@ -53,7 +53,7 @@ function App() {
         {/* <BookList /> */}
         <NewSubcription onAdd={addSubHandlers} />
         <Filter onChangeFil={changevalue} filterVal={filter} />
-        {/* <SubcriptionChart filterdata={filterdata} /> */}
+        {/* <SubcriptionChart filterdata={filterdata} /> */}  
       </div>
       <SubcriptionList filterdata={filterdata} />
       {/* {filterdata.length===0 && <h2>No data</h2>}
