@@ -4,18 +4,17 @@ import './AddSubscribe.css'
 import React, { useState } from 'react'
 
 function AddSubscribe() {
-    let [subcription,setSubcription] = useState({name:'henil',pincode:'396195'});
+    let [subcription, setSubcription] = useState({ name: 'henil', pincode: '396195' });
     let onSubmiteHanddler = (event) => {
         event.preventDefault();
         console.log(subcription);
     }
 
-    let nameHandler = (event)=>{
-        // setSubcription({...setSubcription,subcription.name:event.target.value})
-        console.log(event.target.value);
+    let nameHandler = (event) => {
+        setSubcription({subcription.name='d'})
     }
-    let pincodeHandler = (event)=>{
-        console.log(event.target.value);
+    let pincodeHandler = (event) => {
+        setSubcription({ ...setSubcription })
     }
     return (
         <Container className="AddSubscribe">
