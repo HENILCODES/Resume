@@ -1,24 +1,16 @@
 .AddSubscribe{
     background-color: aliceblue;
-    width:350px;
+    width:400px;
     text-align: center;
 }
-table{
-    margin: auto;
-}
-label{
+.box label{
     font-weight: bold;
+    font-size: 20px;
 }
 .input{
+    margin-left: 20px;
     padding: 5px;
 }
-tr,td{
-    padding: 10px;
-}
-.button{
-    width: 100%;
-    padding: 10px;
-    font-size: 20px;
-    font-weight: bold;
-    background-color: rgb(190, 80, 203);
+.box{
+    margin: 20px;
 }

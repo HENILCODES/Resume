@@ -1,3 +1,4 @@
+import Button from '../templates/Button';
 import Container from '../templates/Container';
 import './AddSubscribe.css'
 
@@ -6,33 +7,23 @@ function AddSubscribe() {
     let onSubmiteHanddler = (event) => {
         event.preventDefault();
     }
+    let onClickHandler = () => {
+        console.log("Click");
+    }
     return (
         <Container className="AddSubscribe">
-            <form onSubmit={onSubmiteHanddler} autocomplete="off">
-                    <table>
-                        <tr className="box">
-                            <td>
-                                <label htmlFor="name">Name : </label>
-                            </td>
-                            <td>
-                                <input type="text" id="name" className="input" />
-                            </td>
-                        </tr>
-                        <tr className="box">
-                            <td>
-                                <label htmlFor="pincode">Pine Code :</label>
-                            </td>
-                            <td>
-                                <input type="number" id="pincode" className="input" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                <button type="submit" className="button">Done</button>
-                            </td>
-                        </tr>
-                    </table>
-                </Container>
+            <form onSubmit={onSubmiteHanddler} autoComplete="off">
+                <div className="box">
+                    <label htmlFor="name">Name : </label>
+                    <input type="text" id="name" className="input" />
+                </div>
+                <div className="box">
+                    <label htmlFor="pincode">Pine Code :</label>
+                    <input type="number" id="pincode" className="input" />
+                </div>
+                <div className="box">
+                    <Button type="submit" onClick={onClickHandler}>Send</Button>
+                </div>
             </form>
         </Container>
     )
