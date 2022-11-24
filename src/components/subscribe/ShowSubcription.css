@@ -1,0 +1,13 @@
+.flex{
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+    color: aliceblue;
+}
+.da{
+    padding: 20px 1px;
+}
+.data{
+    text-align: center;
+    color: gold;
+}
