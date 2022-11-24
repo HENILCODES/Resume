@@ -34,9 +34,9 @@ function App() {
 
   const [data, setData] = useState(Sub)
   let addSubHandlers = (dataS) => {
-    setData([dataS, ...Sub])
+    setData([dataS, ...data])
   }
-
+  console.log(data);
   const [filter, setfiler] = useState('2022');
   let changevalue = (data) => {
     setfiler(data);
