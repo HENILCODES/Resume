@@ -10,7 +10,7 @@ function App() {
       pincode: "396195"
     },
     {
-      name: "raj",
+      name: "Sivam",
       pincode: "396195"
     }
   ]
@@ -25,7 +25,7 @@ function App() {
     <div className="App">
       <AddSubscribe onSave={saveHandler} />
       <div className="f-w">
-        {Datas.map((e, i, m) => {
+        {Datas.map((e, i) => {
           return <ShowSubcription name={e.name} pincode={e.pincode} key={i} />
         })}
       </div>
