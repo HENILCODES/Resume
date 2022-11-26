@@ -20,7 +20,7 @@ function AddSubscribe(props) {
         }
         else {
             props.onSave(subcription);
-            // setSubcription({ name: '', pincode: '' });
+            setSubcription({ name: '', pincode: '' });
         }
     }
 

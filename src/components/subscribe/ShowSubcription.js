@@ -13,7 +13,6 @@ function ShowSubcription(props) {
                 <h3>Details</h3>
             </div>
             <div className="flex">
-                <span>{props.arrayId}</span>
                 <span>{props.name}</span>
                 <span>{props.pincode}</span>
             </div>

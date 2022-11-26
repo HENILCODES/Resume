@@ -32,8 +32,8 @@ function App() {
     <Fragment>
       <AddSubscribe onSave={saveHandler} />
       <div className="f-w">
-        {Datas.map((e, i) => {
-          return <ShowSubcription name={e.name} pincode={e.pincode} key={i} arrayId={i} featchDelete={getDelet} />
+        {Datas.length === 0 ? <h1>No Data Found</h1> : Datas.map((element, index) => {
+          return <ShowSubcription name={element.name} pincode={element.pincode} key={index} arrayId={index} featchDelete={getDelet} />
         })}
       </div>
     </Fragment>
