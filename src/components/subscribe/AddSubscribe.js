@@ -5,7 +5,7 @@ import React, { useState } from 'react'
 import ErrorModal from '../templates/ErrorModal';
 
 function AddSubscribe(props) {
-    let [subcription, setSubcription] = useState({ name: '', pincode: '' });
+    let [subcription, setSubcription] = useState({ name: 'henil', pincode: '333333' });
     let [error, setError] = useState(false);
 
     let onSubmiteHanddler = (event) => {
@@ -20,7 +20,7 @@ function AddSubscribe(props) {
         }
         else {
             props.onSave(subcription);
-            setSubcription({ name: '', pincode: '' });
+            // setSubcription({ name: '', pincode: '' });
         }
     }
 

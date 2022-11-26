@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import './App.css';
 import AddSubscribe from './components/subscribe/AddSubscribe';
 import ShowSubcription from './components/subscribe/ShowSubcription';
@@ -16,20 +16,27 @@ function App() {
   ]
 
   const [Datas, setDatas] = useState(arrA);
-  
+
   let saveHandler = (data) => {
-    setDatas([data, ...Datas])
+    setDatas([...Datas, data])
+  }
+
+  let getDelet = (id) => {
+    let AfterDelete = Datas.filter((element, Arrindex) => {
+      return Arrindex !== id;
+    })
+    setDatas(AfterDelete);
   }
 
   return (
-    <div className="App">
+    <Fragment>
       <AddSubscribe onSave={saveHandler} />
       <div className="f-w">
         {Datas.map((e, i) => {
-          return <ShowSubcription name={e.name} pincode={e.pincode} key={i} />
+          return <ShowSubcription name={e.name} pincode={e.pincode} key={i} arrayId={i} featchDelete={getDelet} />
         })}
       </div>
-    </div>
+    </Fragment>
   );
 }
 
