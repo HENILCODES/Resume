@@ -3,6 +3,7 @@ import Container from '../templates/Container';
 import './AddSubscribe.css'
 import React, { useReducer, useState } from 'react'
 import ErrorModal from '../templates/ErrorModal';
+import Input from '../templates/Input';
 
 function setReducer(latest, action) {
 
@@ -32,7 +33,9 @@ function AddSubscribe(props) {
         }
         else {
             props.onSave(subcription);
-            setsubcripReducer({ type: "clear" });
+            // setSubcription({ name: '', pincode: '' });
+            nameRef.current.value='';
+            pincodeRef.current.value='';
         }
     }
     let nameHandler = (event) => {
@@ -51,11 +54,11 @@ function AddSubscribe(props) {
             <form onSubmit={onSubmiteHanddler} autoComplete="off">
                 <div className="box">
                     <label htmlFor="name">Name : </label>
-                    <input type="text" value={subcription.name} id="name" className="input" onChange={nameHandler} />
+                    <input type="text" ref={nameRef} id="name" className="input" onChange={nameHandler} />
                 </div>
                 <div className="box">
                     <label htmlFor="pincode">Pine Code :</label>
-                    <input type="number" value={subcription.pincode} id="pincode" className="input" onChange={pincodeHandler} />
+                    <input type="number" ref={pincodeRef} id="pincode" className="input" onChange={pincodeHandler} />
                 </div>
                 <div className="box">
                     <Button type="submit">Send</Button>
