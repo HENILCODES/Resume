@@ -16,6 +16,7 @@ function App() {
       ammount: "125.6",
       name: "Henil"
     },
+    
     {
       id: "2",
       date: (new Date('2022', '3', '2')),
@@ -36,7 +37,7 @@ function App() {
   let addSubHandlers = (dataS) => {
     setData([dataS, ...data])
   }
-  console.log(data);
+  
   const [filter, setfiler] = useState('2022');
   let changevalue = (data) => {
     setfiler(data);

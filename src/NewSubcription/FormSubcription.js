@@ -1,12 +1,17 @@
 import './FormSubcription.css'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const FormSubcription = (props) => {
 
     const [valid, Setvalid] = useState(false);
 
     const [form, setForm] = useState({ userTitle: '', userDate: '', userAmmount: '', name: '' })
-
+    useEffect(() => {
+        let timerId = setTimeout(() => {
+            console.log("title effect");
+        }, 2000);
+        return () => { console.log("S"); clearTimeout(timerId); }
+    }, [form.userTitle])
     let CheckValid = (data) => {
         if (data.target.value.trim().length > 0) {
             Setvalid(true);
@@ -34,7 +39,7 @@ const FormSubcription = (props) => {
     }
     let onsubmithandler = (events) => {
         events.preventDefault();
-        if (form.userTitle.trim().length ===0) {
+        if (form.userTitle.trim().length === 0) {
             return valid
         }
         const Subcript = { title: form.userTitle, ammount: form.userAmmount, date: new Date(form.userDate), name: form.name }
