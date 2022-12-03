@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-// import BookList from './BookDetail/BookList';
 import NewSubcription from './NewSubcription/NewSubcription';
 import Filter from './Subcription/Filter';
-// import SubcriptionChart from './Subcription/SubcriptionChart';
 import SubcriptionList from './Subcription/SubcriptionList';
+import SubcripContext from './Store/SubcriptionContext'
 
 function App() {
 
@@ -16,7 +15,7 @@ function App() {
       ammount: "125.6",
       name: "Henil"
     },
-    
+
     {
       id: "2",
       date: (new Date('2022', '3', '2')),
@@ -37,10 +36,10 @@ function App() {
   let addSubHandlers = (dataS) => {
     setData([dataS, ...data])
   }
-  
+
   const [filter, setfiler] = useState('2022');
   let changevalue = (data) => {
-    localStorage.setItem('filter',data);
+    localStorage.setItem('filter', data);
     if (localStorage.getItem('filter')) {
       setfiler(localStorage.getItem('filter'));
       return;
@@ -50,22 +49,19 @@ function App() {
   const filterdata = data.filter((item) => {
     return item.date.getFullYear().toString() === filter
   })
-  useEffect(()=>{
+  useEffect(() => {
     setfiler(localStorage.getItem('filter'));
-  },[])
+  }, [])
   return (
     <div>
       <div className="App">
-        {/* <BookList /> */}
         <NewSubcription onAdd={addSubHandlers} />
-        <Filter onChangeFil={changevalue} filterVal={filter} />
-        {/* <SubcriptionChart filterdata={filterdata} /> */}  
       </div>
-      <SubcriptionList filterdata={filterdata} />
-      {/* {filterdata.length===0 && <h2>No data</h2>}
-      {filterdata.length !== 0 && filterdata.map((value) => <Subcription key={value.id} name={value.name} date={value.date} title={value.title} ammount={value.ammount} />)} */}
-
-      {/* {filterdata.length === 0 ? <h1>Not Found</h1> : filterdata.map((value) => <Subcription key={value.id} name={value.name} date={value.date} title={value.title} ammount={value.ammount} />)} */}
+      <SubcripContext.Provider value={{ subContextData: [] }}>
+        <Filter onChangeFil={changevalue} filterVal={filter} />
+        <br />
+        <SubcriptionList filterdata={filterdata} />
+      </SubcripContext.Provider>
     </div>
   );
 }
