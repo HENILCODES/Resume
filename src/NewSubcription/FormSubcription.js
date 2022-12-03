@@ -18,10 +18,10 @@ const reducrFun = (latest, action) => {
     }
     return { userTitle: '0', userDate: '0', userAmmount: '0', name: '0' };
 }
+
 const FormSubcription = (props) => {
     
     const [formReducer, setFormReducer] = useReducer(reducrFun, { userTitle: '', userDate: '', userAmmount: '', name: '' });
-
     // const {userTitle:titleRedusar} = formReducer;
     // console.log(titleRedusar);
 
@@ -32,26 +32,19 @@ const FormSubcription = (props) => {
         return () => { console.log("S"); clearTimeout(timerId); }
     }, [formReducer.userTitle])
 
-
     let titileChange = (event) => {
-
         setFormReducer({ type: 'TITLE', val: event.target.value });
-
-
     }
     let dateChange = (event) => {
         setFormReducer({ type: 'DATE', val: event.target.value });
-
-
     }
     let ammountChange = (event) => {
         setFormReducer({ type: 'AMMOUNT', val: event.target.value });
-
     }
     let namechnage = (event) => {
         setFormReducer({ type: 'NAME', val: event.target.value });
-
     }
+
     let onsubmithandler = (events) => {
         events.preventDefault();
         if (formReducer.userTitle.trim().length === 0) {
