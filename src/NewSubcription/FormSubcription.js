@@ -1,48 +1,63 @@
 import './FormSubcription.css'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useReducer } from 'react'
 
+const reducrFun = (latest, action) => {
+    console.log("Call Fun Reducer", latest, action);
+    if (action.type === 'TITLE') {
+        return { ...latest, userTitle: action.val }
+    } else if (action.type === 'DATE') {
+        return { ...latest, userDate: action.val }
+
+    } else if (action.type === 'AMMOUNT') {
+        return { ...latest, userAmmount: action.val }
+
+    } else if (action.type === 'NAME') {
+        return { ...latest, name: action.val }
+    } else {
+        console.log("D");
+    }
+    return { userTitle: '0', userDate: '0', userAmmount: '0', name: '0' };
+}
 const FormSubcription = (props) => {
+    
+    const [formReducer, setFormReducer] = useReducer(reducrFun, { userTitle: '', userDate: '', userAmmount: '', name: '' });
 
-    const [valid, Setvalid] = useState(false);
+    // const {userTitle:titleRedusar} = formReducer;
+    // console.log(titleRedusar);
 
-    const [form, setForm] = useState({ userTitle: '', userDate: '', userAmmount: '', name: '' })
     useEffect(() => {
         let timerId = setTimeout(() => {
             console.log("title effect");
         }, 2000);
         return () => { console.log("S"); clearTimeout(timerId); }
-    }, [form.userTitle])
-    let CheckValid = (data) => {
-        if (data.target.value.trim().length > 0) {
-            Setvalid(true);
-            data.target.className = "Valid";
-        } else {
-            Setvalid(false);
-            data.target.className = "notValid";
-        }
-    }
+    }, [formReducer.userTitle])
+
+
     let titileChange = (event) => {
-        setForm({ ...form, userTitle: event.target.value });
-        CheckValid(event);
+
+        setFormReducer({ type: 'TITLE', val: event.target.value });
+
+
     }
     let dateChange = (event) => {
-        setForm({ ...form, userDate: event.target.value });
-        CheckValid(event);
+        setFormReducer({ type: 'DATE', val: event.target.value });
+
+
     }
     let ammountChange = (event) => {
-        setForm({ ...form, userAmmount: event.target.value });
-        CheckValid(event);
+        setFormReducer({ type: 'AMMOUNT', val: event.target.value });
+
     }
     let namechnage = (event) => {
-        setForm({ ...form, name: event.target.value });
-        CheckValid(event);
+        setFormReducer({ type: 'NAME', val: event.target.value });
+
     }
     let onsubmithandler = (events) => {
         events.preventDefault();
-        if (form.userTitle.trim().length === 0) {
-            return valid
+        if (formReducer.userTitle.trim().length === 0) {
+            return;
         }
-        const Subcript = { title: form.userTitle, ammount: form.userAmmount, date: new Date(form.userDate), name: form.name }
+        const Subcript = { title: formReducer.userTitle, ammount: formReducer.userAmmount, date: new Date(formReducer.userDate), name: formReducer.name }
         props.onSave(Subcript);
     }
 
@@ -50,19 +65,19 @@ const FormSubcription = (props) => {
         <form onSubmit={onsubmithandler}>
             <div className="controle">
                 <label> name </label>
-                <input type="text" value={form.name} onChange={namechnage} />
+                <input type="text" value={formReducer.name} onChange={namechnage} />
             </div>
             <div className="controle">
                 <label> Title </label>
-                <input type="text" value={form.userTitle} onChange={titileChange} />
+                <input type="text" value={formReducer.userTitle} onChange={titileChange} />
             </div>
             <div className="controle">
                 <label> Date </label>
-                <input type="date" onChange={dateChange} value={form.userDate} />
+                <input type="date" onChange={dateChange} value={formReducer.userDate} />
             </div>
             <div className="controle">
                 <label> ammount </label>
-                <input type="text" max={10} onChange={ammountChange} value={form.userAmmount} />
+                <input type="text" max={10} onChange={ammountChange} value={formReducer.userAmmount} />
             </div>
             <div className="controle">
                 <button type='submit' className="addB">Add Subcription</button>

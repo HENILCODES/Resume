@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 // import BookList from './BookDetail/BookList';
 import NewSubcription from './NewSubcription/NewSubcription';
@@ -40,14 +40,19 @@ function App() {
   
   const [filter, setfiler] = useState('2022');
   let changevalue = (data) => {
-    setfiler(data);
+    localStorage.setItem('filter',data);
+    if (localStorage.getItem('filter')) {
+      setfiler(localStorage.getItem('filter'));
+      return;
+    }
+    setfiler(filter);
   }
-  
   const filterdata = data.filter((item) => {
     return item.date.getFullYear().toString() === filter
   })
-
-  
+  useEffect(()=>{
+    setfiler(localStorage.getItem('filter'));
+  },[])
   return (
     <div>
       <div className="App">
