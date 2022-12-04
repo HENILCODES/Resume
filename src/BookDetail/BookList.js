@@ -1,25 +1,33 @@
 import { useState } from 'react'
 import Container from '../template/Container'
 import BookDetailAdd from './BookDetailAdd'
+import BookContext from './BookContext'
+import BookListDisplay from './BookListDisplay'
 export default function BookList() {
 
-
-    const [dataBook, setBook] = useState(false);
+ 
+    let Book = [
+        {
+            title: 'Java',
+            desc: "Hello"
+        },
+        {
+            title: 'C',
+            desc: "Good"
+        }
+    ]
+    const [dataBook, setBook] = useState(Book);
     let BookDataSee = (data) => {
-        setBook(data)
+        setBook([...dataBook, data]);
     }
-    
+
     return (
         <Container>
-            <h1>Book List</h1>
-            <BookDetailAdd onSaveData={BookDataSee} />
-
-            {
-                !dataBook ? dataBook : dataBook.forEach(element => {
-                    // document.write(element.title);
-                    return <h1>{element.title}</h1>
-                })
-            }
+            <BookContext.Provider value={{data:BookDataSee,DatabookContex:dataBook,name:'henil'}}>
+                <h1>Book List</h1>
+                <BookDetailAdd/>
+                <BookListDisplay />
+            </BookContext.Provider>
         </Container>
     )
 }
