@@ -57,7 +57,7 @@ function App() {
       <div className="App">
         <NewSubcription onAdd={addSubHandlers} />
       </div>
-      <SubcripContext.Provider value={{ subContextData: filterdata , names:'henil' }}>
+      <SubcripContext.Provider value={{ subContextData: filterdata, names: 'henil' }}>
         <Filter onChangeFil={changevalue} filterVal={filter} />
         <br />
         <SubcriptionList filterdata={filterdata} />

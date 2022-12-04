@@ -2,7 +2,6 @@ import './FormSubcription.css'
 import React, { useEffect, useReducer } from 'react'
 
 const reducrFun = (latest, action) => {
-    console.log("Call Fun Reducer", latest, action);
     if (action.type === 'TITLE') {
         return { ...latest, userTitle: action.val }
     } else if (action.type === 'DATE') {
@@ -20,7 +19,7 @@ const reducrFun = (latest, action) => {
 }
 
 const FormSubcription = (props) => {
-    
+
     const [formReducer, setFormReducer] = useReducer(reducrFun, { userTitle: '', userDate: '', userAmmount: '', name: '' });
     // const {userTitle:titleRedusar} = formReducer;
     // console.log(titleRedusar);
@@ -29,7 +28,7 @@ const FormSubcription = (props) => {
         let timerId = setTimeout(() => {
             console.log("title effect");
         }, 2000);
-        return () => { console.log("S"); clearTimeout(timerId); }
+        return () => { clearTimeout(timerId); }
     }, [formReducer.userTitle])
 
     let titileChange = (event) => {
