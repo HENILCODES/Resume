@@ -3,6 +3,7 @@ import Container from '../templates/Container';
 import './AddSubscribe.css'
 import React, { useRef, useState } from 'react'
 import ErrorModal from '../templates/ErrorModal';
+import Input from '../templates/Input';
 
 function AddSubscribe(props) {
     let [subcription, setSubcription] = useState({ name: '', pincode: '' });
@@ -22,7 +23,7 @@ function AddSubscribe(props) {
         }
         else {
             props.onSave(subcription);
-            // setSubcription({ name: '', pincode: '' });
+            setSubcription({ name: '', pincode: '' });
             nameRef.current.value='';
             pincodeRef.current.value='';
         }
@@ -42,12 +43,10 @@ function AddSubscribe(props) {
             {error && <ErrorModal title={error.title} content={error.content} onClose={closeHandler} />}
             <form onSubmit={onSubmiteHanddler} autoComplete="off">
                 <div className="box">
-                    <label htmlFor="name">Name : </label>
-                    <input type="text" ref={nameRef} id="name" className="input" onChange={nameHandler} />
+                    <Input type="text" passRef={nameRef} label="Name" id="name" onChange={nameHandler} className="input" />
                 </div>
                 <div className="box">
-                    <label htmlFor="pincode">Pine Code :</label>
-                    <input type="number" ref={pincodeRef} id="pincode" className="input" onChange={pincodeHandler} />
+                    <Input type="number" passRef={pincodeRef} label="Pinecode" id="pinecode" onChange={pincodeHandler} className="input" />
                 </div>
                 <div className="box">
                     <Button type="submit">Send</Button>
