@@ -6,9 +6,9 @@ import Subcription from './Subcription';
 export default function SubcriptionList(props) {
 
     const ctx = useContext(SubcripContext);
-    console.log(ctx);
+
     if (props.filterdata.length === 0) {
-        return <h1>No data</h1>
+        return <h1>No data {ctx.names}</h1>
     } else {
         return (
             // <SubcripContext.Consumer>
