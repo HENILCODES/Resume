@@ -1,6 +1,5 @@
-import { Fragment, useState } from 'react';
+import { Fragment, useContext, useState } from 'react';
 import './App.css';
-import deleteElContext from './components/deleteElContext';
 import AddSubscribe from './components/subscribe/AddSubscribe';
 import ShowSubcription from './components/subscribe/ShowSubcription';
 
@@ -21,22 +20,21 @@ function App() {
   let saveHandler = (data) => {
     setDatas([...Datas, data])
   }
-  let deletes = (Arrindess) => {
+
+  let getDelet = (id) => {
     let AfterDelete = Datas.filter((element, Arrindex) => {
-      return Arrindex !== Arrindess;
+      return Arrindex !== id;
     })
     setDatas(AfterDelete);
   }
   return (
     <Fragment>
       <AddSubscribe onSave={saveHandler} />
-      <deleteElContext.Provider value={{ getDelete: deletes }}>
-        <div className="f-w">
-          {Datas.length === 0 ? <h1>No Data Found</h1> : Datas.map((element, index) => {
-            return <ShowSubcription name={element.name} pincode={element.pincode} key={index} arrayId={index} featchDelete={deletes} />
-          })}
-        </div>
-      </deleteElContext.Provider>
+      <div className="f-w">
+        {Datas.length === 0 ? <h1>No Data Found</h1> : Datas.map((element, index) => {
+          return <ShowSubcription name={element.name} pincode={element.pincode} key={index} arrayId={index} featchDelete={getDelet} />
+        })}
+      </div>
     </Fragment>
   );
 }
