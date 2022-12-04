@@ -1,11 +1,23 @@
 import Button from '../templates/Button';
 import Container from '../templates/Container';
 import './AddSubscribe.css'
-import React, { useState } from 'react'
+import React, { useReducer, useState } from 'react'
 import ErrorModal from '../templates/ErrorModal';
 
+function setReducer(latest, action) {
+
+    if (action.type === 'Name') {
+        return { ...latest, name: action.value };
+    }
+    else if (action.type === 'Pincode') {
+        return { ...latest, pincode: action.value };
+    } else {
+        return { name: '', pincode: '' };
+    }
+}
+
 function AddSubscribe(props) {
-    let [subcription, setSubcription] = useState({ name: '', pincode: '' });
+    let [subcription, setsubcripReducer] = useReducer(setReducer, { name: '', pincode: '' })
     let [error, setError] = useState(false);
 
     let onSubmiteHanddler = (event) => {
@@ -20,14 +32,15 @@ function AddSubscribe(props) {
         }
         else {
             props.onSave(subcription);
-            setSubcription({ name: '', pincode: '' });
+            setsubcripReducer({ type: "clear" });
         }
     }
     let nameHandler = (event) => {
-        setSubcription({ ...subcription, name: event.target.value })
+        setsubcripReducer({ type: "Name", value: event.target.value });
+        console.log(subcription);
     }
     let pincodeHandler = (event) => {
-        setSubcription({ ...subcription, pincode: event.target.value })
+        setsubcripReducer({ type: "Pincode", value: event.target.value });
     }
     let closeHandler = () => {
         setError(false);
