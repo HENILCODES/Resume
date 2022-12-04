@@ -1,14 +1,18 @@
+import React from "react";
+import deleteElContext from "../deleteElContext";
 import Button from "../templates/Button";
 import Container from "../templates/Container";
 import './ShowSubcription.css'
 function ShowSubcription(props) {
+    let ctx = React.useContext(deleteElContext);
     
-    let deleteHandler = () => {
-        props.featchDelete(props.arrayId);
+    let deletes = ()=>{
+        ctx.getDelete(props.arrayId);
     }
+
     return (
         <Container className="da">
-            <Button onClick={deleteHandler}>Delete</Button>
+            <Button onClick={deletes}>Delete</Button>
             <div className="data">
                 <h3>Details</h3>
             </div>
