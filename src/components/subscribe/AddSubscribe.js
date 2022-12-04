@@ -3,7 +3,6 @@ import Container from '../templates/Container';
 import './AddSubscribe.css'
 import React, { useReducer, useState } from 'react'
 import ErrorModal from '../templates/ErrorModal';
-import Input from '../templates/Input';
 
 function setReducer(latest, action) {
 
@@ -12,13 +11,15 @@ function setReducer(latest, action) {
     }
     else if (action.type === 'Pincode') {
         return { ...latest, pincode: action.value };
-    } else {
+    } else if (action.type === 'clear') {
         return { name: '', pincode: '' };
     }
 }
 
 function AddSubscribe(props) {
     let [subcription, setsubcripReducer] = useReducer(setReducer, { name: '', pincode: '' })
+    let name = subcription.name;
+    let pincode = subcription.pincode;
     let [error, setError] = useState(false);
 
     let onSubmiteHanddler = (event) => {
@@ -34,13 +35,11 @@ function AddSubscribe(props) {
         else {
             props.onSave(subcription);
             // setSubcription({ name: '', pincode: '' });
-            nameRef.current.value='';
-            pincodeRef.current.value='';
+            setsubcripReducer({ type: 'clear' });
         }
     }
     let nameHandler = (event) => {
         setsubcripReducer({ type: "Name", value: event.target.value });
-        console.log(subcription);
     }
     let pincodeHandler = (event) => {
         setsubcripReducer({ type: "Pincode", value: event.target.value });
@@ -54,11 +53,11 @@ function AddSubscribe(props) {
             <form onSubmit={onSubmiteHanddler} autoComplete="off">
                 <div className="box">
                     <label htmlFor="name">Name : </label>
-                    <input type="text" ref={nameRef} id="name" className="input" onChange={nameHandler} />
+                    <input type="text" id="name" value={name} className="input" onChange={nameHandler} />
                 </div>
                 <div className="box">
                     <label htmlFor="pincode">Pine Code :</label>
-                    <input type="number" ref={pincodeRef} id="pincode" className="input" onChange={pincodeHandler} />
+                    <input type="number" id="pincode" value={pincode} className="input" onChange={pincodeHandler} />
                 </div>
                 <div className="box">
                     <Button type="submit">Send</Button>
