@@ -21,7 +21,7 @@ function AddSubscribe(props) {
     let name = subcription.name;
     let pincode = subcription.pincode;
     let [error, setError] = useState(false);
-
+    
     let onSubmiteHanddler = (event) => {
         event.preventDefault();
         if (subcription.name.trim().length === 0) {
