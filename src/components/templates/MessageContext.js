@@ -1,5 +1,5 @@
 import React from 'react'
 
-const MessageContext = React.createContext({messageData:{},senderNameContext:[]});
+const MessageContext = React.createContext({senderNameContext:[],sendChatToContext:{}});
 
 export default MessageContext;

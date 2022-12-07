@@ -5,7 +5,7 @@ function Header(props) {
     <div className="top">
       <div className="top1">
         <span>
-          <a href="https://henil.rf.gd/Live_Chat/" className="logo">
+          <a href="#ids" className="logo">
             Web Chat
           </a>
         </span>
@@ -19,7 +19,7 @@ function Header(props) {
           className="invite_a bi bi-whatsapp"
           title="Send To What's app"
         > </a>
-        <a className="bi bi-arrow-clockwise" href="index.php" id="ref"> </a>
+        <a className="bi bi-arrow-clockwise" href="/" id="ref"> </a>
         <form  method="post" className="log_Form">
           <button name="Log_Out" type="submit" className="login_log">
             Log out

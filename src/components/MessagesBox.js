@@ -1,6 +1,7 @@
 import React from "react";
-import DateMessageBox from './templates/DateMessageBox'
+
 function MessageBox(props) {
+ 
   return (
     <div className="message">
       <div className="user">
@@ -10,10 +11,10 @@ function MessageBox(props) {
         <span> {props.senderChat} </span>
       </div>
       <div className="time">
-        <DateMessageBox date={props.senderTime}/>
+        <span>{props.senderTime}</span>
       </div>
     </div>
   );
 }
 
-export default MessageBox
+export default MessageBox;
