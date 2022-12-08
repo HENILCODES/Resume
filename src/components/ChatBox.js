@@ -3,16 +3,32 @@ import MessageBox from "./MessagesBox";
 function ChatBox(props) {
   const [message, setMessage] = useState();
 
-  let fetchDataToApi = async () => {
-    console.log("Feycj");
-    let response = await fetch(
-      "https://react-app-5b8a3-default-rtdb.firebaseio.com/liveChat.json"
-    );
-    let data = await response.json();
-    setMessage(Object.values(data));
-  };
+  let sendDataToApi = async (datas)=>{
+    await fetch(
+      "https://henil-2bfd8-default-rtdb.firebaseio.com/liveChat.json",
+      {
+        method: "POST",
+        body: JSON.stringify(datas),
+        headers: { "content-type": "application/json" },
+      }
+      ).catch((Error) => {
+        console.log(Error.message);
+      });
+      console.log("send");
+  }
 
+  let fetchDataToApi = async () => {
+    console.log("get");
+    let response = await fetch(
+      "https://henil-2bfd8-default-rtdb.firebaseio.com/liveChat.json"
+      );
+      let data = await response.json();
+      setMessage(Object.values(data));
+      console.log("end get");
+  };
+  console.log("ChatBox");
   useEffect(() => {
+    sendDataToApi(props.datasend);
     fetchDataToApi();
   }, [props.datasend]);
 
@@ -33,4 +49,4 @@ function ChatBox(props) {
   );
 }
 
-export default ChatBox;
+export default React.memo(ChatBox);
