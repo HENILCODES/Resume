@@ -20,8 +20,8 @@ function Header(props) {
           title="Send To What's app"
         > </a>
         <a className="bi bi-arrow-clockwise" href="/" id="ref"> </a>
-        <form  method="post" className="log_Form">
-          <button name="Log_Out" type="submit" className="login_log">
+        <form className="log_Form">
+          <button type="submit" className="login_log">
             Log out
           </button>
         </form>

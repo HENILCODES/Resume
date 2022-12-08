@@ -1,18 +1,19 @@
 import React, { memo, useState } from "react";
+import ChatBox from "./ChatBox";
 
 function InputChatBox(props) {
+  let [fetchD, setfetchD] = useState({});
   const [message, setMessage] = useState({
     chat: "",
     sender: "",
     sendTime: "",
   });
-
   let submitHandler = async (event) => {
     event.preventDefault();
     if (message.chat.length === 0) {
       return;
     }
-    setMessage({ chat: "" });
+    setfetchD(message);
     await fetch(
       "https://react-app-5b8a3-default-rtdb.firebaseio.com/liveChat.json",
       {
@@ -20,9 +21,10 @@ function InputChatBox(props) {
         body: JSON.stringify(message),
         headers: { "content-type": "application/json" },
       }
-    ).catch((Error) => {
-      console.log(Error.message);
-    });
+      ).catch((Error) => {
+        console.log(Error.message);
+      });
+      setMessage({ chat: "" });
   };
 
   let inputChatHandler = (event) => {
@@ -34,25 +36,28 @@ function InputChatBox(props) {
   };
 
   return (
-    <div className="bottom">
-      <div id="chat_in">
-        <form className="form" onSubmit={submitHandler}>
-          <input
-            type="text"
-            onChange={inputChatHandler}
-            className="input"
-            id="ChatsBox"
-            value={message.chat}
-            autoComplete="off"
-            placeholder="Type Message"
-            title="Type Message"
-          />
-          <button className="send bi bi-send" name="Done">
-            {" "}
-          </button>
-        </form>
+    <>
+      <ChatBox datasend={fetchD} />
+      <div className="bottom">
+        <div id="chat_in">
+          <form className="form" onSubmit={submitHandler}>
+            <input
+              type="text"
+              onChange={inputChatHandler}
+              className="input"
+              id="ChatsBox"
+              value={message.chat}
+              autoComplete="off"
+              placeholder="Type Message"
+              title="Type Message"
+            />
+            <button className="send bi bi-send" name="Done">
+              {" "}
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
