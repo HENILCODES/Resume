@@ -28,7 +28,7 @@ function InputChatBox(props) {
             type="text"
             value={chat.chat}
             onChange={inputChatHandler}
-            className="input"
+            className="Chatinput"
             id="ChatsBox"
             autoComplete="off"
             placeholder="Type Message"
