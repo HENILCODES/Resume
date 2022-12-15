@@ -1,8 +1,9 @@
-import React, { memo, useState } from "react";
+import React, { memo, useContext, useState } from "react";
+import MessageContext from "./templates/MessageContext";
 
 function InputChatBox(props) {
   const [chat, setChat] = useState({ chat: "" });
- 
+ let ctx = useContext(MessageContext);
   let submitHandler = (event) => {
     event.preventDefault();
     if (chat.chat.length === 0) {
@@ -10,7 +11,7 @@ function InputChatBox(props) {
     }
     props.setsendData({
       ...chat,
-      sender: props.userName,
+      sender: ctx.Uname,
       sendTime: new Date().toLocaleString("default"),
     });
     setChat({ chat: "" });

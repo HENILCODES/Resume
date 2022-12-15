@@ -1,5 +1,27 @@
-import React from 'react'
+import React, { useState } from "react";
 
-const MessageContext = React.createContext({senderNameContext:[],sendChatToContext:[]});
+let contextData = {
+  Uname: "Guest",
+  setName: {},
+};
+
+const MessageContext = React.createContext(contextData);
 
 export default MessageContext;
+
+export function MessageContexProvider(props) {
+  let [Data, setData] = useState("Guest");
+
+  let NameHandler = (d) => {
+    setData(d);
+  };
+  let valueOfContext = {
+    Uname: Data,
+    setName: NameHandler,
+  };
+  return (
+    <MessageContext.Provider value={valueOfContext}>
+      {props.children}
+    </MessageContext.Provider>
+  );
+}

@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import useInput from "./hook/useInput";
 import "./Login.css";
 import MessageContext from "./templates/MessageContext";
-function LoginForm() {
+function SignUpForm() {
   const [formValid, setFormValid] = useState(false);
   let [showPassword, setShowPassword] = useState(false);
   let ctx = useContext(MessageContext);
@@ -96,4 +96,4 @@ function LoginForm() {
     </div>
   );
 }
-export default LoginForm;
+export default SignUpForm;

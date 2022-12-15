@@ -22,9 +22,9 @@ function Header(props) {
         >
           {" "}
         </a>
-        <a className="bi bi-arrow-clockwise" href="/" id="ref">
+        <p className={`bi bi-arrow-clockwise ${props.DataGet}`}  onClick={props.reFetch} id="ref">
           {" "}
-        </a>
+        </p>
         <form className="log_Form">
           <Link type="submit" to="/login" className="login_log">
             Log out

@@ -67,9 +67,6 @@ a:active{
 li{
     padding: 10px;
 }
-.active{
-    background-color: rgb(80, 135, 171);
-}
 .password{
     display: flex;
     margin-top: 2px;
@@ -101,7 +98,7 @@ li{
     cursor: pointer;
     outline: none;
 }
-input{
+.input , .inputx{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 18px !important;
     font-weight: 500;
