@@ -1,4 +1,5 @@
 import React, { memo } from "react";
+import { Link } from "react-router-dom";
 
 function Header(props) {
   return (
@@ -18,12 +19,16 @@ function Header(props) {
           href="whatsapp://send?text=Join With Me for Live Chatting Come Fast."
           className="invite_a bi bi-whatsapp"
           title="Send To What's app"
-        > </a>
-        <a className="bi bi-arrow-clockwise" href="/" id="ref"> </a>
+        >
+          {" "}
+        </a>
+        <a className="bi bi-arrow-clockwise" href="/" id="ref">
+          {" "}
+        </a>
         <form className="log_Form">
-          <button type="submit" className="login_log">
+          <Link type="submit" to="/login" className="login_log">
             Log out
-          </button>
+          </Link>
         </form>
       </div>
     </div>
