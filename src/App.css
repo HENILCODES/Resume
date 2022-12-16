@@ -52,10 +52,9 @@ body {
   background-color: gold;
   text-shadow: 0 0 10px white;
   transition: 0.5s;
+
 }
 .login:hover {
-  background-color: brown;
-  color: gold;
   box-shadow: 0 0 10px 0 white;
   border: 1px solid gold;
 }
@@ -82,7 +81,7 @@ body {
 .live_User {
   color: #ffd700;
   font-size: 18px;
-  margin-left: -5px;
+  margin-left: 5px;
 }
 .live_U {
   font-weight: bold;
@@ -131,8 +130,12 @@ body {
 
 #ref {
   font-size: 40px;
+  cursor: pointer;
   margin-right: 30px;
   text-shadow: 0 0 5px gold;
+}
+#ref:active{
+  transform: rotate(365deg);
 }
 .active_Spin{
   animation: spin 1.6s infinite linear;
@@ -148,9 +151,8 @@ body {
 .login_log {
   text-shadow: 0 0 5px gold;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 33px;
   background-color: brown;
-  outline: none;
   border: 0;
   cursor: pointer;
   color: white;

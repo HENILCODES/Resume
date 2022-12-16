@@ -42,7 +42,7 @@ function App() {
   return (
     <div className="header">
       <div className="main">
-        <Header userName="Henil" reFetch={dataGetHandler} />
+        <Header reFetch={dataGetHandler} />
         <div className="chats" id="chat_s">
           {stopSpiner && (
             <div className="spiner">
@@ -65,6 +65,7 @@ function App() {
               );
             })}
         </div>
+        
         <InputChatBox userName="Henil" setsendData={dataSendHandler} />
       </div>
     </div>

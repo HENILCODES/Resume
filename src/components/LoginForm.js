@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import useInput from "./hook/useInput";
 import "./Login.css";
 import MessageContext from "./templates/MessageContext";
+import { useNavigate } from "react-router-dom"
 function LoginForm() {
   const [formValid, setFormValid] = useState(false);
   let [showPassword, setShowPassword] = useState(false);
@@ -24,13 +25,15 @@ function LoginForm() {
     resetInput: passwordReset,
   } = useInput((value) => value.trim().length < 7 || value.trim().length === 0);
 
+  let s = useNavigate();
   let onSubmitHandler = (event) => {
     event.preventDefault();
     if (nameValid || passwordValid) {
       return;
     }
     console.log(nameInput, " ", passwordInput);
-    ctx.setName(nameInput);
+    ctx.setContexts(nameInput,true);
+    s.replace("/");
     nameReset();
     passwordReset();
   };

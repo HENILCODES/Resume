@@ -22,16 +22,25 @@ function SignUpForm() {
     onChangeHandler: onpasswordChange,
     onBlurHandler: onpasswordBlur,
     resetInput: passwordReset,
-  } = useInput((value) => value.trim().length < 7 || value.trim().length === 0);
+  } = useInput((value) => value.trim().length === 0);
+  let {
+    input: emailInput,
+    inputValid: emailValid,
+    inputIsValid: emailIsValid,
+    onChangeHandler: onEmailChange,
+    onBlurHandler: onEmailBlur,
+    resetInput: emailReset,
+  } = useInput((value) => value.trim().length === 0 || !value.includes("@"));
 
   let onSubmitHandler = (event) => {
     event.preventDefault();
-    if (nameValid || passwordValid) {
+    if (nameValid || passwordValid | emailValid) {
       return;
     }
     console.log(nameInput, " ", passwordInput);
     ctx.setName(nameInput);
     nameReset();
+    emailReset();
     passwordReset();
   };
 
@@ -40,16 +49,32 @@ function SignUpForm() {
   };
 
   useEffect(() => {
-    if (!nameValid && !passwordValid) {
+    if (!nameValid && !passwordValid | !emailValid) {
       setFormValid(true);
     } else {
       setFormValid(false);
     }
-  }, [nameValid, passwordValid]);
+  }, [nameValid, passwordValid, emailValid]);
 
   return (
     <div className="infor">
       <form autoComplete="off" onSubmit={onSubmitHandler}>
+        <div className="input_box">
+          <label htmlFor="user" className="label">
+            User Email
+          </label>
+          <input
+            type="text"
+            className="input"
+            value={emailInput}
+            onChange={onEmailChange}
+            onBlur={onEmailBlur}
+            placeholder="type Email"
+            id="email"
+            title="User Name"
+          />
+          {emailIsValid && <p className="error-p">*Email Not Valid</p>}
+        </div>
         <div className="input_box">
           <label htmlFor="user" className="label">
             User name
@@ -64,7 +89,7 @@ function SignUpForm() {
             id="user"
             title="User Name"
           />
-          {nameIsValid && <p className="error-p">*Name Required</p>}
+          {nameIsValid && <p className="error-p">*Name Not Valid</p>}
         </div>
         <div className="input_box">
           <label className="label" htmlFor="password">
@@ -87,10 +112,10 @@ function SignUpForm() {
               onClick={onShowClickHandler}
             ></span>
           </div>
-          {passwordIsValid && <p className="error-p">*Password Required</p>}
+          {passwordIsValid && <p className="error-p">*Password Not Valid</p>}
         </div>
         <button className="Log_Button" disabled={!formValid} type="submit">
-          Log in
+          Sign Up
         </button>
       </form>
     </div>

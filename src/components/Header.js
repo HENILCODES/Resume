@@ -1,7 +1,10 @@
-import React, { memo } from "react";
+import React, { memo, useContext } from "react";
 import { Link } from "react-router-dom";
+import MessageContext from "./templates/MessageContext";
 
 function Header(props) {
+  let ctx = useContext(MessageContext);
+
   return (
     <div className="top">
       <div className="top1">
@@ -11,7 +14,7 @@ function Header(props) {
           </a>
         </span>
         <h3 className="live_User">
-          Welcome <span className="live_U"> {props.userName}</span>
+          Welcome <span className="live_U"> {ctx.Uname}</span>
         </h3>
       </div>
       <div className="top2">
@@ -22,13 +25,23 @@ function Header(props) {
         >
           {" "}
         </a>
-        <p className={`bi bi-arrow-clockwise ${props.DataGet}`}  onClick={props.reFetch} id="ref">
+        <p
+          className={`bi bi-arrow-clockwise ${props.DataGet}`}
+          onClick={props.reFetch}
+          id="ref"
+        >
           {" "}
         </p>
         <form className="log_Form">
-          <Link type="submit" to="/login" className="login_log">
-            Log out
-          </Link>
+          {ctx.isLogin ? (
+            <Link type="submit" className="login_log">
+              Log out
+            </Link>
+          ) : (
+            <Link to="/login" className="login_log">
+              Log in 
+            </Link>
+          )}
         </form>
       </div>
     </div>
