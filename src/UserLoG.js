@@ -8,7 +8,7 @@ function UserLoG(props) {
   return (
     <div className="Login-main">
       <div className="box">
-        <div className="header">
+        <div className="header-Log">
           <img src={logo} alt="not load" />
           <div className="h-data">
             <Link to="/" className="logo_name">

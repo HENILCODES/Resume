@@ -1,18 +1,18 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import useInput from "./hook/useInput";
+import { useNavigate } from "react-router-dom";
 import "./Login.css";
-import MessageContext from "./templates/MessageContext";
 function SignUpForm() {
   const [formValid, setFormValid] = useState(false);
+  let [pending, setPending] = useState(false);
+
   let [showPassword, setShowPassword] = useState(false);
-  let ctx = useContext(MessageContext);
   let {
     input: nameInput,
     inputValid: nameValid,
     inputIsValid: nameIsValid,
     onChangeHandler: onNameChange,
     onBlurHandler: onNameBlur,
-    resetInput: nameReset,
   } = useInput((value) => value.trim().length === 0);
 
   let {
@@ -21,27 +21,29 @@ function SignUpForm() {
     inputIsValid: passwordIsValid,
     onChangeHandler: onpasswordChange,
     onBlurHandler: onpasswordBlur,
-    resetInput: passwordReset,
-  } = useInput((value) => value.trim().length === 0);
+  } = useInput((value) => value.trim().length < 6);
+
   let {
     input: emailInput,
     inputValid: emailValid,
     inputIsValid: emailIsValid,
     onChangeHandler: onEmailChange,
     onBlurHandler: onEmailBlur,
-    resetInput: emailReset,
-  } = useInput((value) => value.trim().length === 0 || !value.includes("@"));
+  } = useInput(
+    (value) => !value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)
+  );
+
+  let navigate = useNavigate();
 
   let onSubmitHandler = (event) => {
+    setPending(true);
     event.preventDefault();
     if (nameValid || passwordValid | emailValid) {
       return;
     }
     console.log(nameInput, " ", passwordInput);
-    ctx.setName(nameInput);
-    nameReset();
-    emailReset();
-    passwordReset();
+    setPending(false);
+    navigate("/login");
   };
 
   let onShowClickHandler = () => {
@@ -49,7 +51,7 @@ function SignUpForm() {
   };
 
   useEffect(() => {
-    if (!nameValid && !passwordValid | !emailValid) {
+    if (!nameValid && !passwordValid && !emailValid) {
       setFormValid(true);
     } else {
       setFormValid(false);
@@ -60,11 +62,11 @@ function SignUpForm() {
     <div className="infor">
       <form autoComplete="off" onSubmit={onSubmitHandler}>
         <div className="input_box">
-          <label htmlFor="user" className="label">
-            User Email
+          <label htmlFor="email" className="label">
+            Email Addres
           </label>
           <input
-            type="text"
+            type="email"
             className="input"
             value={emailInput}
             onChange={onEmailChange}
@@ -112,11 +114,15 @@ function SignUpForm() {
               onClick={onShowClickHandler}
             ></span>
           </div>
-          {passwordIsValid && <p className="error-p">*Password Not Valid</p>}
+          {passwordIsValid && <p className="error-p">*Enter Strong Password</p>}
         </div>
-        <button className="Log_Button" disabled={!formValid} type="submit">
-          Sign Up
-        </button>
+        {pending ? (
+          <div className="loader"></div>
+        ) : (
+          <button className="Log_Button" disabled={!formValid} type="submit">
+            Sign Up
+          </button>
+        )}
       </form>
     </div>
   );

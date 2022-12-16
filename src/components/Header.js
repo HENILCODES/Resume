@@ -1,10 +1,16 @@
 import React, { memo, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import MessageContext from "./templates/MessageContext";
 
 function Header(props) {
-  let ctx = useContext(MessageContext);
+  let navigate = useNavigate();
 
+  let ctx = useContext(MessageContext);
+  let LogoutHandler = () => {
+    ctx.Logout();
+    navigate("/login");
+    console.log("d");
+  };
   return (
     <div className="top">
       <div className="top1">
@@ -34,12 +40,17 @@ function Header(props) {
         </p>
         <form className="log_Form">
           {ctx.isLogin ? (
-            <Link type="submit" className="login_log">
+            <Link
+              type="submit"
+              to="/login"
+              className="login_log"
+              onClick={LogoutHandler}
+            >
               Log out
             </Link>
           ) : (
             <Link to="/login" className="login_log">
-              Log in 
+              Log in
             </Link>
           )}
         </form>

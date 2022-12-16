@@ -1,11 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import useInput from "./hook/useInput";
 import "./Login.css";
+import { useNavigate } from "react-router-dom";
 import MessageContext from "./templates/MessageContext";
-import { useNavigate } from "react-router-dom"
 function LoginForm() {
   const [formValid, setFormValid] = useState(false);
   let [showPassword, setShowPassword] = useState(false);
+  let [pending, setPending] = useState(false);
+
   let ctx = useContext(MessageContext);
   let {
     input: nameInput,
@@ -23,17 +25,18 @@ function LoginForm() {
     onChangeHandler: onpasswordChange,
     onBlurHandler: onpasswordBlur,
     resetInput: passwordReset,
-  } = useInput((value) => value.trim().length < 7 || value.trim().length === 0);
-
-  let s = useNavigate();
+  } = useInput((value) => value.trim().length < 6);
+  let navigate = useNavigate();
   let onSubmitHandler = (event) => {
+    setPending(true);
     event.preventDefault();
     if (nameValid || passwordValid) {
       return;
     }
     console.log(nameInput, " ", passwordInput);
-    ctx.setContexts(nameInput,true);
-    s.replace("/");
+    navigate("/");
+    ctx.setContexts(nameInput, true);
+    setPending(false);
     nameReset();
     passwordReset();
   };
@@ -92,9 +95,13 @@ function LoginForm() {
           </div>
           {passwordIsValid && <p className="error-p">*Password Required</p>}
         </div>
-        <button className="Log_Button" disabled={!formValid} type="submit">
-          Log in
-        </button>
+        {pending ? (
+          <div className="loader"></div>
+        ) : (
+          <button className="Log_Button" disabled={!formValid} type="submit">
+            Log in
+          </button>
+        )}
       </form>
     </div>
   );

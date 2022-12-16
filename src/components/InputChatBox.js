@@ -42,7 +42,7 @@ function InputChatBox(props) {
         ) : (
           <div className="SignUp">
             <h1>
-              Start Live Chat{" "}
+              Start Web Chat{" "}
               <Link to="/signup" className="login">
                 {" "}
                 Sign up

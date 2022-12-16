@@ -35,17 +35,17 @@ body{
     padding: 30px 25px;
     background-color: white;
 }
-.header{
+.header-Log{
     margin-bottom: 35px;
     display: block;
 }
-.header .logo_name{
+.header-Log .logo_name{
     letter-spacing: 2px;
     color: #300171b6;
     font-size: 16px;
     font-weight: bold;
 }
-.header h5{
+.header-Log h5{
     font-size: 22px;
     color: #314e8b;
     margin-top: 10px;
@@ -53,7 +53,7 @@ body{
 form{
     text-align: left;
 }
-.header img{
+.header-Log img{
     width: 62px;
     border-radius: 50%;
     border: 2px solid #385185;
@@ -73,6 +73,25 @@ li{
     border-radius: 4px;
     background:  rgba(250,250,250);
 }
+
+.loader {
+    border: 5px solid #e0c9c9;
+    border-top: 5px solid rgb(105, 18, 129);
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    animation: spin 1s linear infinite;
+    margin: auto;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 .input , .password{
     border: 2px solid rgba(148, 142, 142, 0.485);
     background:  rgb(236 216 238) !important;

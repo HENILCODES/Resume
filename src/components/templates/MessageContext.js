@@ -3,6 +3,7 @@ import React, { useState } from "react";
 let contextData = {
   Uname: "Guest",
   isLogin: false,
+  Logout: {},
   setContexts: {},
 };
 
@@ -13,14 +14,19 @@ export default MessageContext;
 export function MessageContexProvider(props) {
   let [Data, setData] = useState("Guest");
   let [isLogin, setIsLogin] = useState(false);
-  
-  let ContextHandler = (setUName, setLog) => {
+
+  let ContextHandler = (setUName) => {
     setData(setUName);
-    setIsLogin(setLog);
+    setIsLogin(true);
+  };
+  let setLogout = () => {
+    setData("Guest")
+    setIsLogin(false);
   };
   let valueOfContext = {
     Uname: Data,
     isLogin: isLogin,
+    Logout: setLogout,
     setContexts: ContextHandler,
   };
   return (
