@@ -62,7 +62,6 @@ function LoginForm() {
       })
       .finally(() => {
         setPending(false);
-        console.log("S");
       });
   };
 

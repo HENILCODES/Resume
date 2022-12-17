@@ -36,8 +36,8 @@ function SignUpForm() {
   let navigate = useNavigate();
 
   let onSubmitHandler = async (event) => {
-    setPending(true);
     event.preventDefault();
+    setPending(true);
     if (nameValid || passwordValid || emailValid) {
       return;
     }
@@ -56,12 +56,17 @@ function SignUpForm() {
       .then((response) => {
         if (response.ok) {
           navigate("/login");
+        } else {
+          return response.json().then((data) => {
+            if (data || data.error) {
+              console.log(data);
+            }
+          });
         }
       })
-      .catch((Error) => {
-        console.log(Error);
+      .finally(() => {
+        setPending(false);
       });
-    setPending(false);
   };
 
   let onShowClickHandler = () => {
