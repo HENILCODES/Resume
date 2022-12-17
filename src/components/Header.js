@@ -15,9 +15,7 @@ function Header(props) {
     <div className="top">
       <div className="top1">
         <span>
-          <a href="#ids" className="logo">
-            Web Chat
-          </a>
+          <span className="logo">Web Chat</span>
         </span>
         <h3 className="live_User">
           Welcome <span className="live_U"> {ctx.Uname}</span>
@@ -38,22 +36,20 @@ function Header(props) {
         >
           {" "}
         </p>
-        <form className="log_Form">
-          {ctx.isLogin ? (
-            <Link
-              type="submit"
-              to="/login"
-              className="login_log"
-              onClick={LogoutHandler}
-            >
-              Log out
-            </Link>
-          ) : (
-            <Link to="/login" className="login_log">
-              Log in
-            </Link>
-          )}
-        </form>
+        {ctx.isLogin ? (
+          <Link
+            type="submit"
+            to="/login"
+            className="login_log"
+            onClick={LogoutHandler}
+          >
+            Log out
+          </Link>
+        ) : (
+          <Link to="/login" className="login_log">
+            Log in
+          </Link>
+        )}
       </div>
     </div>
   );

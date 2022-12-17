@@ -15,8 +15,10 @@ function LoginForm() {
     inputIsValid: nameIsValid,
     onChangeHandler: onNameChange,
     onBlurHandler: onNameBlur,
-    resetInput: nameReset,
-  } = useInput((value) => value.trim().length === 0);
+  } = useInput(
+    (value) =>
+      !value.trim().match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)
+  );
 
   let {
     input: passwordInput,
@@ -24,21 +26,44 @@ function LoginForm() {
     inputIsValid: passwordIsValid,
     onChangeHandler: onpasswordChange,
     onBlurHandler: onpasswordBlur,
-    resetInput: passwordReset,
   } = useInput((value) => value.trim().length < 6);
+
   let navigate = useNavigate();
-  let onSubmitHandler = (event) => {
+
+  let onSubmitHandler = async (event) => {
     setPending(true);
     event.preventDefault();
     if (nameValid || passwordValid) {
       return;
     }
-    console.log(nameInput, " ", passwordInput);
-    navigate("/");
-    ctx.setContexts(nameInput, true);
-    setPending(false);
-    nameReset();
-    passwordReset();
+    await fetch(
+      "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAvTfBn1R1_dvqxwq7hwXMD3ptiH3Ex3s0",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          email: nameInput,
+          password: passwordInput,
+          returnSecureToken: true,
+        }),
+        headers: { "Content-Type": "application/json" },
+      }
+    )
+      .then((response) => {
+        if (response.ok) {
+          ctx.setContexts(nameInput, true);
+          navigate("/");
+        } else {
+          return response.json().then((data) => {
+            if (data || data.error) {
+              console.log(data);
+            }
+          });
+        }
+      })
+      .finally(() => {
+        setPending(false);
+        console.log("S");
+      });
   };
 
   let onShowClickHandler = () => {
@@ -58,15 +83,15 @@ function LoginForm() {
       <form autoComplete="off" onSubmit={onSubmitHandler}>
         <div className="input_box">
           <label htmlFor="user" className="label">
-            User name
+            Email Address
           </label>
           <input
-            type="text"
+            type="email"
             className="input"
             value={nameInput}
             onChange={onNameChange}
             onBlur={onNameBlur}
-            placeholder="type username"
+            placeholder="type Email"
             id="user"
             title="User Name"
           />

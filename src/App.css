@@ -44,7 +44,7 @@ body {
   cursor: pointer;
   margin-left: 5px;
   font-weight: bold;
-  padding: 13px;
+  padding: 8px;
   text-decoration: none;
   color: black;
   box-shadow: 0 0 15px 0 rgb(119, 4, 181);
@@ -65,7 +65,6 @@ body {
   border-radius: 10px;
   padding: 10px;
   margin-bottom: 10px;
-  text-shadow: 0 0 10px black;
 }
 .chats {
   height: 450px;

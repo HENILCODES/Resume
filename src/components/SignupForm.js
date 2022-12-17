@@ -35,15 +35,33 @@ function SignUpForm() {
 
   let navigate = useNavigate();
 
-  let onSubmitHandler = (event) => {
+  let onSubmitHandler = async (event) => {
     setPending(true);
     event.preventDefault();
-    if (nameValid || passwordValid | emailValid) {
+    if (nameValid || passwordValid || emailValid) {
       return;
     }
-    console.log(nameInput, " ", passwordInput);
+    await fetch(
+      "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAvTfBn1R1_dvqxwq7hwXMD3ptiH3Ex3s0",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          email: emailInput,
+          password: passwordInput,
+          returnSecureToken: true,
+        }),
+        headers: { "Content-Type": "application/json" },
+      }
+    )
+      .then((response) => {
+        if (response.ok) {
+          navigate("/login");
+        }
+      })
+      .catch((Error) => {
+        console.log(Error);
+      });
     setPending(false);
-    navigate("/login");
   };
 
   let onShowClickHandler = () => {
