@@ -3,10 +3,12 @@ import useInput from "./hook/useInput";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
 import MessageContext from "./templates/MessageContext";
+import Error_Log from "./templates/Error_Log";
 function LoginForm() {
   const [formValid, setFormValid] = useState(false);
   let [showPassword, setShowPassword] = useState(false);
   let [pending, setPending] = useState(false);
+  let [error, setError] = useState(false);
 
   let ctx = useContext(MessageContext);
   let {
@@ -55,7 +57,7 @@ function LoginForm() {
         } else {
           return response.json().then((data) => {
             if (data || data.error) {
-              console.log(data);
+              setError(data.error.message);
             }
           });
         }
@@ -76,9 +78,12 @@ function LoginForm() {
       setFormValid(false);
     }
   }, [nameValid, passwordValid]);
-
+  let closeHandler = ()=>{
+    setError(false);
+  }
   return (
     <div className="infor">
+      {error && <Error_Log Error={error}  setClose={closeHandler}/>}
       <form autoComplete="off" onSubmit={onSubmitHandler}>
         <div className="input_box">
           <label htmlFor="user" className="label">

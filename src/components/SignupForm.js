@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import useInput from "./hook/useInput";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
+import Error_Log from "./templates/Error_Log";
+
 function SignUpForm() {
   const [formValid, setFormValid] = useState(false);
   let [pending, setPending] = useState(false);
-
+  let [error, setError] = useState(false);
   let [showPassword, setShowPassword] = useState(false);
   let {
     input: nameInput,
@@ -59,7 +61,7 @@ function SignUpForm() {
         } else {
           return response.json().then((data) => {
             if (data || data.error) {
-              console.log(data);
+              setError(data.error.message);
             }
           });
         }
@@ -80,9 +82,12 @@ function SignUpForm() {
       setFormValid(false);
     }
   }, [nameValid, passwordValid, emailValid]);
-
+  let closeHandler = () => {
+    setError(false);
+  };
   return (
     <div className="infor">
+      {error && <Error_Log Error={error} setClose={closeHandler} />}
       <form autoComplete="off" onSubmit={onSubmitHandler}>
         <div className="input_box">
           <label htmlFor="email" className="label">

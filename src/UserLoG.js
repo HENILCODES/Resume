@@ -14,7 +14,7 @@ function UserLoG(props) {
             <Link to="/" className="logo_name">
               Web Chat
             </Link>
-            {props.Login ? <h5>Create Account</h5> : <h5>Welcome back!</h5>}
+            {props.Login ? <h5>Welcome back!</h5>:<h5>Create Account</h5>  }
           </div>
         </div>
         {props.Login ? <LoginForm /> : <SignUpForm />}
