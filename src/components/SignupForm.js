@@ -88,7 +88,7 @@ function SignUpForm() {
   return (
     <div className="infor">
       {error && <Error_Log Error={error} setClose={closeHandler} />}
-      <form autoComplete="off" onSubmit={onSubmitHandler}>
+      <form onSubmit={onSubmitHandler}>
         <div className="input_box">
           <label htmlFor="email" className="label">
             Email Addres

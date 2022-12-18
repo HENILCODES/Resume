@@ -84,7 +84,7 @@ function LoginForm() {
   return (
     <div className="infor">
       {error && <Error_Log Error={error}  setClose={closeHandler}/>}
-      <form autoComplete="off" onSubmit={onSubmitHandler}>
+      <form onSubmit={onSubmitHandler}>
         <div className="input_box">
           <label htmlFor="user" className="label">
             Email Address
@@ -96,8 +96,8 @@ function LoginForm() {
             onChange={onNameChange}
             onBlur={onNameBlur}
             placeholder="type Email"
-            id="user"
-            title="User Name"
+            id="email"
+            title="User email"
           />
           {nameIsValid && <p className="error-p">*Name Required</p>}
         </div>
