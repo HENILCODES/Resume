@@ -43,9 +43,9 @@ function InputChatBox(props) {
           <div className="SignUp">
             <h1>
               Start {ctx.Title} 
-              <Link to="/signup" className="login">
+              <Link to="/login" className="login">
                 {" "}
-                Sign up
+                Let's Go
               </Link>
             </h1>
           </div>

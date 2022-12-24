@@ -9,7 +9,6 @@ function Header(props) {
   let LogoutHandler = () => {
     ctx.Logout();
     navigate("/login");
-    console.log("d");
   };
   return (
     <div className="top">

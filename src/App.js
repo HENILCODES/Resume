@@ -9,7 +9,6 @@ function App() {
   let [stopSpiner, setStopSpiner] = useState(false);
 
   let dataSendHandler = async (ChatData) => {
-    console.log("data Send start");
     await fetch(
       "https://henil-2bfd8-default-rtdb.firebaseio.com/liveChat.json",
       {
@@ -18,10 +17,9 @@ function App() {
         headers: { "content-type": "application/json" },
       }
     ).catch((Error) => {
-      console.log(Error.message);
+      alert(Error.message);
     });
 
-    console.log("data Send end", ChatData);
     dataGetHandler();
   };
 
@@ -29,7 +27,9 @@ function App() {
     setStopSpiner(true);
     let response = await fetch(
       "https://henil-2bfd8-default-rtdb.firebaseio.com/liveChat.json"
-    );
+    ).catch((erro) => {
+      alert(erro.message);
+    });
     let data = await response.json();
     getMessageApi(Object.values(data).reverse());
     setStopSpiner(false);
@@ -63,12 +63,15 @@ function App() {
               );
             })}
         </div>
-        
+
         <InputChatBox userName="Henil" setsendData={dataSendHandler} />
       </div>
       <div className="footer">
-    <div className="data"> &copy;2022 <a href="https://henil.rf.gd"> Henil Code</a> </div>
-  </div>
+        <div className="data">
+          {" "}
+          &copy;2022 <a href="https://henil.rf.gd"> Henil Code</a>{" "}
+        </div>
+      </div>
     </div>
   );
 }

@@ -4,6 +4,7 @@
     margin: 0;
     transition: 0.7s;
 }
+
 .error-p{
     color: rgb(213, 62, 62);
     font-family: monospace;
@@ -151,7 +152,7 @@ li{
 .Log_Button{
     padding: 8px;
     width: 100%;
-    background-color: rgb(105, 18, 129);
+    background-color: var(--Back);
     outline: none;
     color: white;
     font-size: 15px;
@@ -164,10 +165,10 @@ li{
     cursor: pointer;
 }
 .Log_Button:hover{
-    background-color: rgb(66, 3, 129)
+    background-color: var(--Back);
 }
 .Log_Button:disabled{
-    background-color: rgb(135, 108, 161)
+    background-color: rgb(74, 84, 136);
 }
 .Log_Button:active{
     background-color: #39637e;
