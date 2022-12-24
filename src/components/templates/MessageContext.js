@@ -29,7 +29,7 @@ export function MessageContexProvider(props) {
     isLogin: isLogin,
     Logout: setLogout,
     setContexts: ContextHandler,
-    Title: "Live Chat",
+    Title: "Chat Site",
   };
   return (
     <MessageContext.Provider value={valueOfContext}>

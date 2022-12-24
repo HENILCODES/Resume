@@ -9,7 +9,7 @@ function UserLoG() {
     <div className="Login-main">
       <div className="box">
         <div className="header-Log">
-          <img src="logo.jpg" alt="not load" />
+          <img src="logo.png" alt="not load" />
           <div className="h-data">
             <Link to="/" className="logo_name">
               {ctx.Title}

@@ -22,7 +22,7 @@ function Header(props) {
       </div>
       <div className="top2">
         <a
-          href="whatsapp://send?text=Join With Me for Live Chatting Come Fast."
+          href="whatsapp://send?text=Join With me on https://chat-henilcode.netlify.app/ Chatting Site."
           className="invite_a bi bi-whatsapp"
           title="Send To What's app"
         >
