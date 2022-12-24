@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "./App.css";
 import logo from "./components/img/logo.png";
 import LoginForm from "./components/LoginForm";
 import SignUpForm from "./components/SignupForm";
+import MessageContext from "./components/templates/MessageContext";
 function UserLoG(props) {
+  let ctx = useContext(MessageContext);
   return (
     <div className="Login-main">
       <div className="box">
@@ -12,7 +14,7 @@ function UserLoG(props) {
           <img src={logo} alt="not load" />
           <div className="h-data">
             <Link to="/" className="logo_name">
-              Web Chat
+              {ctx.Title}
             </Link>
             {props.Login ? <h5>Welcome back!</h5>:<h5>Create Account</h5>  }
           </div>

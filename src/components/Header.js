@@ -15,7 +15,7 @@ function Header(props) {
     <div className="top">
       <div className="top1">
         <span>
-          <span className="logo">Web Chat</span>
+          <span className="logo">{ctx.Title}</span>
         </span>
         <h3 className="live_User">
           Welcome <span className="live_U"> {ctx.Uname}</span>

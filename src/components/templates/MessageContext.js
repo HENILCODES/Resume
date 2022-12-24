@@ -5,6 +5,7 @@ let contextData = {
   isLogin: false,
   Logout: {},
   setContexts: {},
+  Title: "",
 };
 
 const MessageContext = React.createContext(contextData);
@@ -20,7 +21,7 @@ export function MessageContexProvider(props) {
     setIsLogin(true);
   };
   let setLogout = () => {
-    setData("Guest")
+    setData("Guest");
     setIsLogin(false);
   };
   let valueOfContext = {
@@ -28,6 +29,7 @@ export function MessageContexProvider(props) {
     isLogin: isLogin,
     Logout: setLogout,
     setContexts: ContextHandler,
+    Title: "Live Chat",
   };
   return (
     <MessageContext.Provider value={valueOfContext}>

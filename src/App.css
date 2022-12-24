@@ -9,10 +9,8 @@
   .header {
     zoom: 0.7;
     transition: 0.5s;
-  }
-  .main {
     position: absolute;
-    top: 52%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
@@ -45,6 +43,20 @@ body {
   font-size: 1.4rem;
   cursor: pointer;
 }
+
+.footer {
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 55px;
+  color: #673e3e;
+}
+.footer .data a {
+  font-weight: bold;
+  font-size: 1.3rem;
+  padding-left: 2px;
+  color: #ee6868;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 .Error_Box {
   width: 275px;
   background-color: rgb(105, 18, 129);
@@ -55,7 +67,7 @@ body {
   position: absolute;
   top: 7%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
 .Error {
   font-size: 1.2rem;
@@ -102,7 +114,6 @@ body {
   background-color: brown;
   border-radius: 10px;
   padding: 10px;
-  margin-bottom: 10px;
 }
 .chats {
   height: 450px;

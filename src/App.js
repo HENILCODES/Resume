@@ -26,14 +26,12 @@ function App() {
   };
 
   let dataGetHandler = async () => {
-    console.log("get");
     setStopSpiner(true);
     let response = await fetch(
       "https://henil-2bfd8-default-rtdb.firebaseio.com/liveChat.json"
     );
     let data = await response.json();
     getMessageApi(Object.values(data).reverse());
-    console.log("end get");
     setStopSpiner(false);
   };
   useEffect(() => {
@@ -68,6 +66,9 @@ function App() {
         
         <InputChatBox userName="Henil" setsendData={dataSendHandler} />
       </div>
+      <div className="footer">
+    <div className="data"> &copy;2022 <a href="https://henil.rf.gd"> Henil Code</a> </div>
+  </div>
     </div>
   );
 }
