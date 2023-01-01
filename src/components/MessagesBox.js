@@ -1,31 +1,26 @@
 import React, { useState } from "react";
 
 function MessageBox(props) {
-  let [optionActive, setOptionActive] = useState(false);
-
-  let optionClickHandler = () => {
-    setOptionActive(true);
-    // console.log(optionActive);
+  let [copyActive, setCopyActive] = useState(false);
+  let copyHandler = () => {
+    navigator.clipboard.writeText(props.senderChat);
+    setCopyActive(true);
   };
-  let optionCloseHandler = ()=>{
-    setOptionActive(false);
-  }
-  let copyHandler = ()=>{
-    console.log(props.senderChat);
-    optionCloseHandler();
-  }
+  let copyDeactive = () => {
+    setCopyActive(false);
+  };
+  let classIcon = copyActive ? "bi bi-check2-all" : "bi bi-clipboard2-plus";
+
   return (
     <>
-      <div className="message">
+      <div className="message" onMouseLeave={copyDeactive}>
         <div className="user">
           <span>{props.senderName}</span>
-          <span className="bi bi-chevron-down" onMouseEnter={optionClickHandler} onMouseLeave={optionCloseHandler}>
-          {optionActive && (
-            <ul className="option_message">
-              <li onClick={copyHandler}>Copy</li>
-            </ul>
-          )}
-          </span>
+          <i
+            className={`${classIcon} optionsIcon`}
+            onClick={copyHandler}
+            
+          ></i>
         </div>
         <div className="userchat">
           <span> {props.senderChat} </span>

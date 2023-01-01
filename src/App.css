@@ -352,32 +352,6 @@ a {
   box-shadow: 0 0 8px 0 black;
 }
 
-.option_message{
-  width: 102px;
-  /* position: relative; */
-  /* left: 288px; */
-
-  position: absolute;
-  /* top: 68px; */
-  /* margin-top: 5px; */
-  /* margin-left: 285px; */
-
-  background-color: var(--BackLight);
-  box-shadow: 0 5px 10px 0 black;
-  border-radius: 1px 10px 5px 0px;
-}
-.option_message li{
-  border-radius: 1px 10px 5px 0px;
-  padding-left: 18px;
-  font-weight: bold;
-  list-style: none;
-  cursor: pointer;
-  color: white;
-}
-
-.option_message li:hover{
-  background-color: var(--Back);
-}
 .message .user {
   border-top-right-radius: 5px;
   border-top-left-radius: 15px;
@@ -386,11 +360,16 @@ a {
   text-shadow: 0 0 10px rgb(96, 96, 0);
   padding: 6px 1px 5px 15px;
 }
-.message .user .bi-chevron-down{
+.message .user .optionsIcon{
   margin-right: 15px;
   cursor: pointer;
 }
-
+.bi-clipboard2-plus{
+  color: rgb(255, 185, 253) !important;
+}
+.bi-check2-all{
+  color: rgb(2, 200, 75) !important;
+}
 .chats .user {
   background-color: var(--BackLight);
   font-size: 1rem;
@@ -415,7 +394,6 @@ a {
   color: white;
   background-color: var(--Back);
   word-wrap: break-word;
-  cursor: copy !important;
   user-select: all !important;
   padding: 13px 5px 18px 10px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
